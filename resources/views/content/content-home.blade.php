@@ -5,7 +5,7 @@
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="img-fluid img-header" src="{{ asset('img/campus1.jpg') }}" alt="Image">
+                    <img class="img-fluid img-header" src="{{ asset('frontend/img/campus1.jpg') }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="img-fluid img-header" src="{{ asset('img/campus2.jpg') }}" alt="Image">
+                    <img class="img-fluid img-header" src="{{ asset('frontend/img/campus2.jpg') }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="img-fluid img-header" src="{{ asset('img/campus3.jpg') }}" alt="Image">
+                    <img class="img-fluid img-header" src="{{ asset('frontend/img/campus3.jpg') }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="img-fluid img-header" src="{{ asset('img/campus4.jpg') }}" alt="Image">
+                    <img class="img-fluid img-header" src="{{ asset('frontend/img/campus4.jpg') }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -85,8 +85,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                    <i class="fa fa-car text-white"></i>
-                                </div> -->
+                                        <i class="fa fa-car text-white"></i>
+                                    </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Bahasa Arab</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -98,8 +98,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                    <i class="fa fa-users text-white"></i>
-                                </div> -->
+                                        <i class="fa fa-users text-white"></i>
+                                    </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Ekonomi Islam</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -111,8 +111,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                    <i class="fa fa-file-alt text-white"></i>
-                                </div> -->
+                                        <i class="fa fa-file-alt text-white"></i>
+                                    </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Pendidikan
                                     Agama

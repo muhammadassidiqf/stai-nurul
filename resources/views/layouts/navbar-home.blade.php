@@ -34,7 +34,8 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-xl bg-white navbar-light sticky-top p-0">
     <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"><img
-            src="img/stai-logo.png" class="img-logo" alt=""> <span class="fw-bolder text-primary">STAI
+            src="{{ asset('frontend/img/stai-logo.png') }}" class="img-logo" alt=""> <span
+            class="fw-bolder text-primary">STAI
             NURUL
             IMAN</span>
 

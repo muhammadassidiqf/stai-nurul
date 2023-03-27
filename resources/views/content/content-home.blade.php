@@ -85,8 +85,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                        <i class="fa fa-car text-white"></i>
-                                    </div> -->
+                                                <i class="fa fa-car text-white"></i>
+                                            </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Bahasa Arab</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -98,8 +98,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                        <i class="fa fa-users text-white"></i>
-                                    </div> -->
+                                                <i class="fa fa-users text-white"></i>
+                                            </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Ekonomi Islam</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -111,8 +111,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                        <i class="fa fa-file-alt text-white"></i>
-                                    </div> -->
+                                                <i class="fa fa-file-alt text-white"></i>
+                                            </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Pendidikan
                                     Agama
@@ -134,10 +134,11 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px;">
-                        <img class="position-absolute w-100 h-100" src="img/about-campus.jpg" alt=""
-                            style="object-fit: cover;">
-                        <img class="position-absolute top-0 start-0 bg-white pe-3 pb-3" src="img/about-campus2.jpg"
-                            alt="" style="width: 200px; height: 200px;">
+                        <img class="position-absolute w-100 h-100" src="{{ asset('') }}frontend/img/about-campus.jpg"
+                            alt="" style="object-fit: cover;">
+                        <img class="position-absolute top-0 start-0 bg-white pe-3 pb-3"
+                            src="{{ asset('') }}frontend/img/about-campus2.jpg" alt=""
+                            style="width: 200px; height: 200px;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -208,7 +209,7 @@
                             </ol>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/berita-1.jpg" alt="">
+                            <img class="img-fluid" src="{{ asset('') }}frontend/img/berita-1.jpg" alt="">
                             <div class="courses-overlay">
                                 <a class="btn btn-outline-light border-2" href="">Read More</a>
                             </div>
@@ -230,7 +231,7 @@
                             </ol>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/berita-2.jpg" alt="">
+                            <img class="img-fluid" src="{{ asset('') }}frontend/img/berita-2.jpg" alt="">
                             <div class="courses-overlay">
                                 <a class="btn btn-outline-light border-2" href="">Read More</a>
                             </div>
@@ -252,7 +253,7 @@
                             </ol>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/berita-3.jpg" alt="">
+                            <img class="img-fluid" src="{{ asset('') }}frontend/img/berita-3.jpg" alt="">
                             <div class="courses-overlay">
                                 <a class="btn btn-outline-light border-2" href="">Read More</a>
                             </div>
@@ -278,10 +279,11 @@
             <div class="row g-5">
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="position-relative overflow-hidden pe-5 pt-5 h-100 img-video">
-                        <img class="position-absolute w-100 h-100" src="img/about-1.jpg" alt=""
-                            style="object-fit: cover;">
-                        <img class="position-absolute top-0 end-0 bg-white ps-3 pb-3" src="img/about-2.jpg"
-                            alt="" style="width: 200px; height: 200px">
+                        <img class="position-absolute w-100 h-100" src="{{ asset('') }}frontend/img/about-1.jpg"
+                            alt="" style="object-fit: cover;">
+                        <img class="position-absolute top-0 end-0 bg-white ps-3 pb-3"
+                            src="{{ asset('') }}frontend/img/about-2.jpg" alt=""
+                            style="width: 200px; height: 200px">
                     </div>
                 </div>
             </div>
@@ -300,7 +302,8 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-1.jpg"
+                                alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
@@ -319,7 +322,8 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-2.jpg"
+                                alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
@@ -338,7 +342,8 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="img/team-3.jpg" alt="">
+                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-3.jpg"
+                                alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
@@ -357,7 +362,8 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-4.jpg"
+                                alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
@@ -391,7 +397,8 @@
                     <div class="owl-carousel testimonial-carousel">
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-1.jpg" alt="">
+                                <img class="img-fluid rounded-circle mx-auto"
+                                    src="{{ asset('') }}frontend/img/testimonial-1.jpg" alt="">
                                 <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
                                     style="width: 60px; height: 60px;">
                                     <i class="fa fa-quote-left fa-2x text-primary"></i>
@@ -406,7 +413,8 @@
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-2.jpg" alt="">
+                                <img class="img-fluid rounded-circle mx-auto"
+                                    src="{{ asset('') }}frontend/img/testimonial-2.jpg" alt="">
                                 <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
                                     style="width: 60px; height: 60px;">
                                     <i class="fa fa-quote-left fa-2x text-primary"></i>
@@ -421,7 +429,8 @@
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-3.jpg" alt="">
+                                <img class="img-fluid rounded-circle mx-auto"
+                                    src="{{ asset('') }}frontend/img/testimonial-3.jpg" alt="">
                                 <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
                                     style="width: 60px; height: 60px;">
                                     <i class="fa fa-quote-left fa-2x text-primary"></i>

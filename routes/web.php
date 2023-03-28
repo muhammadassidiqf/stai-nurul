@@ -16,15 +16,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/', [LoginController::class, 'index'])->name('login');
-    Route::post('/login', [LoginController::class, 'login'])->name('ceklogin');
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/admin', [LoginController::class, 'index'])->name('login');
+    Route::get('/register', [LoginController::class, 'show'])->name('register');
+    Route::post('/login', [LoginController::class, 'store'])->name('ceklogin');
+    Route::post('/store_register', [LoginController::class, 'store_register'])->name('store_register');
+    Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 });
 
 Route::group(['prefix' => ''], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 });
 
+Route::prefix('admin')->name('admin.')->middleware(['isLogin'])->group(function () {
+});
 
-Route::view('/admin', 'content/content-admin');
-Route::view('/auth', 'content/auth');
+
+// Route::view('/admin', 'content/content-admin');
+// Route::view('/auth', 'content/auth');
+// Route::view('/register', 'content/register');

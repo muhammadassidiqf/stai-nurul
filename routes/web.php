@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/admin', [LoginController::class, 'index'])->name('login');
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::get('/register', [LoginController::class, 'show'])->name('register');
     Route::post('/login', [LoginController::class, 'store'])->name('ceklogin');
     Route::post('/store_register', [LoginController::class, 'store_register'])->name('store_register');
@@ -28,6 +29,7 @@ Route::group(['prefix' => ''], function () {
 });
 
 Route::prefix('admin')->name('admin.')->middleware(['isLogin'])->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin');
 });
 
 

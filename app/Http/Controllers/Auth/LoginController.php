@@ -43,8 +43,8 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'username' => 'required|min:5',
-            'password' => 'required|min:6',
+            'username' => 'required',
+            'password' => 'required',
         ]);
         try {
 
@@ -53,7 +53,7 @@ class LoginController extends Controller
                 if (password_verify($request->password, $res->password)) {
                     Session::put('data', $res);
                     Session::put('login', true);
-                    return Session::has('url.intended') ? redirect()->to(Session::get('url.intended')) : redirect()->route('admin.dashboard');
+                    return Session::has('url.intended') ? redirect()->to(Session::get('url.intended')) : redirect()->route('admin');
                 } else {
                     return redirect()->back();
                 }
@@ -128,7 +128,7 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
         Session::flush();
         return redirect()->route('login');

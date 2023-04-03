@@ -21,27 +21,9 @@
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Landing
                 Pages</span></li>
         <li class="menu-item">
-            <a href="" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-envelope"></i>
-                <div data-i18n="Email">Email</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-chat"></i>
-                <div data-i18n="Chat">Chat</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-calendar"></i>
-                <div data-i18n="Calendar">Calendar</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-grid"></i>
-                <div data-i18n="Kanban">Kanban</div>
+            <a href="{{ route('berita') }}" class="menu-link">
+                <i class='menu-icon tf-icons bx bx-news'></i>
+                <div data-i18n="Berita">Berita</div>
             </a>
         </li>
         <li class="menu-item">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,11 +29,11 @@ Route::group(['prefix' => ''], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 });
 
-Route::prefix('admin')->name('admin.')->middleware(['isLogin'])->group(function () {
+Route::prefix('admin')->middleware(['isLogin'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
 });
 
-
-// Route::view('/admin', 'content/content-admin');
-// Route::view('/auth', 'content/auth');
-// Route::view('/register', 'content/register');
+Route::prefix('berita')->middleware(['isLogin'])->group(function () {
+    Route::get('/', [BeritaController::class, 'index'])->name('berita');
+    Route::get('/list', [BeritaController::class, 'list'])->name('berita.list');
+});

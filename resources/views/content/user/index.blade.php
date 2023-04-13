@@ -9,9 +9,9 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between mx-auto">
-                        <h4 class="breadcrumb-wrapper mb-4">Data Berita</h4>
-                        <a href="{{ route('berita.create') }}" class="btn btn-primary"><i
-                                class='bx bxs-add-to-queue'></i>&nbsp;Tambah Berita</a>
+                        <h4 class="breadcrumb-wrapper mb-4">Data Pengguna</h4>
+                        <a href="{{ route('user.create') }}" class="btn btn-primary"><i
+                                class='bx bxs-user-plus'></i>&nbsp;Tambah Pengguna</a>
                     </div>
                 </div>
                 <div class="card-body pb-2">
@@ -20,9 +20,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Isi</th>
-                                    <th>Kategori</th>
+                                    <th>Nama</th>
+                                    <th>Username</th>
                                     <th>Waktu</th>
                                     <th>Action</th>
                                 </tr>
@@ -46,7 +45,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: "{{ route('berita.list') }}",
+                    url: "{{ route('user.list') }}",
                 },
                 columns: [{
                         data: 'DT_RowIndex',
@@ -55,16 +54,12 @@
                         orderable: false,
                         searchable: false
                     }, {
-                        data: 'judul',
-                        name: 'judul'
+                        data: 'name',
+                        name: 'name'
                     },
                     {
-                        data: 'isi',
-                        name: 'isi'
-                    },
-                    {
-                        data: 'kategori',
-                        name: 'kategori'
+                        data: 'username',
+                        name: 'username'
                     },
                     {
                         data: 'waktu',

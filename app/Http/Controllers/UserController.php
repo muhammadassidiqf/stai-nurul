@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Berita;
-use Illuminate\Http\Request;
+use App\Models\User;
 use Yajra\DataTables\DataTables;
+use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-class BeritaController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,23 +16,20 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        return view('content.berita.index');
+        return view('content.user.index');
     }
 
     public function list()
     {
-        $data = Berita::get(['id', 'judul', 'isi', 'kategori', 'created_at']);
+        $data =  User::get(['id', 'name', 'username', 'created_at']);
         if (request()->ajax()) {
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->editColumn('judul', function ($data) {
-                    return $data->judul;
+                    return $data->name;
                 })
                 ->editColumn('isi', function ($data) {
-                    return $data->isi;
-                })
-                ->editColumn('kategori', function ($data) {
-                    return $data->kategori;
+                    return $data->username;
                 })
                 ->editColumn('waktu', function ($data) {
                     return Carbon::parse($data->created_at)->translatedFormat('d F Y');
@@ -51,7 +48,7 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        return view('content.berita.create');
+        return view('content.user.create');
     }
 
     /**
@@ -62,7 +59,25 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'name' => 'required',
+            'username' => 'required|unique:users,username',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|same:password'
+        ]);
+        // dd($request->all());
+        try {
+
+            User::create([
+                'name' => $request->name,
+                'username' => $request->username,
+                'password' => $request->password,
+            ]);
+
+            return redirect('/admin')->with('success', "Account successfully registered.");
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan! Silakan coba lagi.');
+        }
     }
 
     /**

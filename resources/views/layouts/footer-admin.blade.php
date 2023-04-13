@@ -7,11 +7,10 @@
                 document.write(new Date().getFullYear());
             </script>
             , made with ❤️ by
-            <a href="" target="_blank" class="footer-link fw-semibold">PIXINVENT</a>
+            <a href="" target="_blank" class="footer-link fw-semibold">TIM IT</a>
         </div>
         <div>
             <a href="" class="footer-link me-4" target="_blank">License</a>
-            <a href="" target="_blank" class="footer-link me-4">More Themes</a>
 
             <a href="" target="_blank" class="footer-link me-4">Documentation</a>
 

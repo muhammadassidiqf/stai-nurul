@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" dir="ltr" data-theme="theme-default"
-    data-assets-path="backend/" data-template="vertical-menu-template">
+    data-assets-path="{{ url('backend') }}/" data-template="vertical-menu-template">
 
 <head>
     <meta charset="utf-8" />
@@ -11,7 +11,8 @@
     <title>Admin Sistem</title>
 
     <meta name="description" content="" />
-
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('frontend/img/stai-logo.png') }}" />
 
@@ -32,11 +33,16 @@
         <link rel="stylesheet" href="{{ asset('backend/vendor/css/rtl/theme-default.css') }}"
             class="template-customizer-theme-css" />
         <link rel="stylesheet" href="{{ asset('backend/css/demo.css') }}" />
+        <!-- Vendors CSS -->
+        <link rel="stylesheet" href="{{ asset('backend/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
+        <link rel="stylesheet"
+            href="{{ asset('backend/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
+        <link rel="stylesheet" href="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+        <link rel="stylesheet" href="{{ asset('backend/vendor/libs/typeahead-js/typeahead.css') }}" />
+        <link rel="stylesheet" href="{{ asset('backend/vendor/libs/select2/select2.css') }}" />
+        <link rel="stylesheet" href="{{ asset('backend/vendor/libs/sweetalert2/sweetalert2.css') }}">
     @show
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
-    <link rel="stylesheet" href="{{ asset('backend/vendor/libs/typeahead-js/typeahead.css') }}" />
-
+    @stack('styles')
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -86,15 +92,17 @@
         <script src="{{ asset('backend/vendor/libs/popper/popper.js') }}"></script>
         <script src="{{ asset('backend/vendor/js/bootstrap.js') }}"></script>
         <script src="{{ asset('backend/vendor/libs/i18n/i18n.js') }}"></script>
-
-        <script src="{{ asset('backend/vendor/js/menu.js') }}"></script>
         <!-- endbuild -->
 
+        <script src="{{ asset('backend/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
+        <script src="{{ asset('backend/vendor/js/menu.js') }}"></script>
+        <script src="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+        <script src="{{ asset('backend/vendor/libs/typeahead-js/typeahead.js') }}"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/super-build/ckeditor.js"></script>
         <!-- Main JS -->
         <script src="{{ asset('backend/js/main.js') }}"></script>
     @show
-    <script src="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-    <script src="{{ asset('backend/vendor/libs/typeahead-js/typeahead.js') }}"></script>
+    @stack('scripts')
 </body>
 
 </html>

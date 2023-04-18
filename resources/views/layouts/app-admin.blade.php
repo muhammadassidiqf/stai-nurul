@@ -98,6 +98,7 @@
         <script src="{{ asset('backend/vendor/js/menu.js') }}"></script>
         <script src="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
         <script src="{{ asset('backend/vendor/libs/typeahead-js/typeahead.js') }}"></script>
+        <script src="{{ asset('backend/vendor/libs/sweetalert2/sweetalert2.js') }}"></script>
         <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/super-build/ckeditor.js"></script>
         <!-- Main JS -->
         <script src="{{ asset('backend/js/main.js') }}"></script>

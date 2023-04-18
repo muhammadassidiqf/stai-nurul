@@ -10,12 +10,17 @@
 @endsection
 <!-- Content -->
 @section('content-admin')
+    @if (session('success'))
+        <div class="success-session" data-flashdata="{{ session('success') }}"></div>
+    @elseif(session('error'))
+        <div class="error-session" data-flashdata="{{ session('error') }}"></div>
+    @endif
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="card">
                 <h5 class="card-header">Tambah Berita</h5>
                 <div class="card-body">
-                    <form action="{{ route('berita.store') }}" method="POST">
+                    <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Berita</label>
@@ -35,6 +40,12 @@
                             <div class="col-sm-10">
                                 <input type="text" name="kategori" class="form-control" id="basic-default-company"
                                     placeholder="Kategori Berita">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Upload Gambar Berita</label>
+                            <div class="col-sm-10">
+                                <input type="file" name="file_gambar" class="form-control" id="inputGroupFile01">
                             </div>
                         </div>
                         <div class="row justify-content-end">
@@ -226,6 +237,25 @@
                 'MathType'
             ]
         });
+
+        let flashdatasukses = $('.success-session').data('flashdata');
+        if (flashdatasukses) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: flashdatasukses,
+                type: 'success'
+            })
+        }
+        let flashdataerror = $('.error-session').data('flashdata');
+        if (flashdataerror) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: flashdataerror,
+                type: 'error'
+            })
+        }
     </script>
 @endsection
 <!-- / Content -->

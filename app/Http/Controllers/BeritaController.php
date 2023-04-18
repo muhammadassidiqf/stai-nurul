@@ -6,6 +6,9 @@ use App\Models\Berita;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\File;
 
 class BeritaController extends Controller
 {
@@ -29,7 +32,18 @@ class BeritaController extends Controller
                     return $data->judul;
                 })
                 ->editColumn('isi', function ($data) {
-                    return $data->isi;
+                    $string = strip_tags($data->isi);
+                    if (strlen($string) > 100) {
+
+                        // truncate string
+                        $stringCut = substr($string, 0, 100);
+                        $endPoint = strrpos($stringCut, ' ');
+
+                        //if the string doesn't contain any space then it will cut without word basis.
+                        $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                        $string .= '...';
+                    }
+                    return $string;
                 })
                 ->editColumn('kategori', function ($data) {
                     return $data->kategori;
@@ -38,8 +52,13 @@ class BeritaController extends Controller
                     return Carbon::parse($data->created_at)->translatedFormat('d F Y');
                 })
                 ->editColumn('aksi', function ($data) {
-                    return 'aksi';
+                    return '<div class="text-center">
+                    <button class="btn btn-primary btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showedit" data-remote=""">
+                    <i class="bx bx-show"></i></button>
+                    <a class="btn btn-warning btn-sm" href="" target="_blank"><i class="bx bx-edit" ></i></a>
+                    </div>';
                 })
+                ->rawColumns(['aksi'])
                 ->make(true);
         }
     }
@@ -62,7 +81,34 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'judul' => 'required',
+            'isi' => 'required',
+            'kategori' => 'required',
+            'file_gambar' => [
+                'required',
+                'image'
+            ]
+        ]);
+        if ($validator->fails()) {
+            return redirect()->route('berita.create')->with('error', 'Data berita gagal diajukan');
+        }
+        $user = Session::get('data');
+        $file = $request->file('file_gambar');
+        $file_name = $file->getClientOriginalName();
+        $file_name = preg_replace('!\s+!', ' ', $file_name);
+        $file_name = str_replace(' ', '_', $file_name);
+        $file_name = str_replace('%', '', $file_name);
+        $file_name = pathinfo($file_name, PATHINFO_FILENAME) . '-' . time() . '.' . pathinfo($file_name, PATHINFO_EXTENSION);
+        $file->move(public_path("storage/img/'"), $file_name);
+        Berita::create([
+            'user_id' => $user->id,
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+            'kategori' => $request->kategori,
+            'gambar' => $file_name
+        ]);
+        return redirect()->back()->with('success', "Berita berhasil ditambahkan!");
     }
 
     /**

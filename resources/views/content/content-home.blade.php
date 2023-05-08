@@ -85,8 +85,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                <i class="fa fa-car text-white"></i>
-                                            </div> -->
+                                                                                                                                                                    <i class="fa fa-car text-white"></i>
+                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Bahasa Arab</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -94,12 +94,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                <i class="fa fa-users text-white"></i>
-                                            </div> -->
+                                                                                                                                                                    <i class="fa fa-users text-white"></i>
+                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Ekonomi Islam</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -107,12 +107,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                <i class="fa fa-file-alt text-white"></i>
-                                            </div> -->
+                                                                                                                                                                    <i class="fa fa-file-alt text-white"></i>
+                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Pendidikan
                                     Agama
@@ -132,7 +132,7 @@
     <div class="container-xxl py-6">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
                     <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px;">
                         <img class="position-absolute w-100 h-100" src="{{ asset('') }}frontend/img/about-campus.jpg"
                             alt="" style="object-fit: cover;">
@@ -141,7 +141,7 @@
                             style="width: 200px; height: 200px;">
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-6">
                     <div class="h-100">
                         <h6 class="text-primary text-uppercase mb-2">About Us</h6>
                         <h1 class="display-6 mb-4">We Help Students To Learning about Muslim</h1>
@@ -190,76 +190,52 @@
     <!-- Courses Start -->
     <div class="container-xxl courses my-6 py-6 pb-0">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
                 <h6 class="text-primary text-uppercase mb-2">Berita</h6>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                        <div class="text-center p-4 pt-0">
-                            <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">News</div>
-                            <h5 class="mb-3">Seminar</h5>
-                            <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                            <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Campus
-                                    Life
-                                </li>
-                                <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>14
-                                    March 2023</li>
-                            </ol>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="{{ asset('') }}frontend/img/berita-1.jpg" alt="">
-                            <div class="courses-overlay">
-                                <a class="btn btn-outline-light border-2" href="">Read More</a>
+                @foreach ($news as $n)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
+                            <div class="text-center p-4 pt-0">
+                                <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">News</div>
+                                <h5 class="mb-3">{{ $n->judul }}</h5>
+                                <?php
+                                $string = strip_tags($n->isi);
+                                if (strlen($string) > 100) {
+                                    // truncate string
+                                    $stringCut = substr($string, 0, 100);
+                                    $endPoint = strrpos($stringCut, ' ');
+                                
+                                    //if the string doesn't contain any space then it will cut without word basis.
+                                    $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                                    $string .= '...';
+                                }
+                                ?>
+                                <p>
+                                    {{ $string }}
+                                </p>
+                                <ol class="breadcrumb justify-content-center mb-0">
+                                    <li class="breadcrumb-item small"><i
+                                            class="fa fa-signal text-primary me-2"></i>{{ $n->kategori }}
+                                    </li>
+                                    <li class="breadcrumb-item small"><i
+                                            class="fa fa-calendar-alt text-primary me-2"></i>{{ \Carbon\Carbon::parse($n->created_at)->translatedFormat('d F Y') }}
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="position-relative mt-auto">
+                                <img class="img-fluid" src="{{ asset('') }}storage/img/berita/{{ $n->gambar }}"
+                                    alt="">
+                                <div class="courses-overlay">
+                                    <a class="btn btn-outline-light border-2"
+                                        href="{{ route('newsbySlug', $n->slug) }}">Read
+                                        More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                        <div class="text-center p-4 pt-0">
-                            <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">News</div>
-                            <h5 class="mb-3">Proceeding</h5>
-                            <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                            <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Campus
-                                    Life
-                                </li>
-                                <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>14
-                                    March 2023</li>
-                            </ol>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="{{ asset('') }}frontend/img/berita-2.jpg" alt="">
-                            <div class="courses-overlay">
-                                <a class="btn btn-outline-light border-2" href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                        <div class="text-center p-4 pt-0">
-                            <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">News</div>
-                            <h5 class="mb-3">International Seminar</h5>
-                            <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                            <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Campus
-                                    Life
-                                </li>
-                                <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>14
-                                    March 2023</li>
-                            </ol>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="{{ asset('') }}frontend/img/berita-3.jpg" alt="">
-                            <div class="courses-overlay">
-                                <a class="btn btn-outline-light border-2" href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <div class="col-lg-12 my-6 mb-0 wow fadeInUp mb-4" data-wow-delay="0.1s">
                     <div class="row g-4 text-center">
                         <div class="col-sm-12">
@@ -277,7 +253,7 @@
     <div class="container-xxl py-6">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-12">
                     <div class="position-relative overflow-hidden pe-5 pt-5 h-100 img-video">
                         <img class="position-absolute w-100 h-100" src="{{ asset('') }}frontend/img/about-1.jpg"
                             alt="" style="object-fit: cover;">
@@ -295,11 +271,11 @@
     <!-- Team Start -->
     <div class="container-xxl py-6">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
                 <h1 class="display-6 mb-4">Boards</h1>
             </div>
             <div class="row g-0 team-items">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-3 col-md-6">
                     <div class="team-item position-relative">
                         <div class="position-relative">
                             <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-1.jpg"
@@ -319,7 +295,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-3 col-md-6">
                     <div class="team-item position-relative">
                         <div class="position-relative">
                             <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-2.jpg"
@@ -339,7 +315,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-3 col-md-6">
                     <div class="team-item position-relative">
                         <div class="position-relative">
                             <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-3.jpg"
@@ -359,7 +335,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="col-lg-3 col-md-6">
                     <div class="team-item position-relative">
                         <div class="position-relative">
                             <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-4.jpg"

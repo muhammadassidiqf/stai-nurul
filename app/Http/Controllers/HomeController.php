@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('content.content-home');
+        $news = Berita::orderBy('created_at', 'desc')->limit(3)->get();
+        return view('content.content-home', compact('news'));
+    }
+
+    public function news()
+    {
+        return view('content.content-news');
+    }
+
+    public function about()
+    {
+        return view('content.content-about');
     }
 
     /**
@@ -43,9 +55,11 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+    public function newsbySlug($slug)
     {
-        //
+        $news = Berita::where('slug', $slug)->first();
+        return view('content.content-news', compact('news'));
     }
 
     /**

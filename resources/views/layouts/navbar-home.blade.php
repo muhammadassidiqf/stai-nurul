@@ -33,7 +33,7 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-xl bg-white navbar-light sticky-top p-0">
-    <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"><img
+    <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"><img
             src="{{ asset('frontend/img/stai-logo.png') }}" class="img-logo" alt=""> <span
             class="fw-bolder text-primary">STAI
             NURUL
@@ -47,11 +47,11 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto m-mobile">
 
-            <a href="index.html" class="nav-item nav-link  active">Home</a>
+            <a href="{{ route('home') }}" class="nav-item nav-link  active">Home</a>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Tentang</a>
                 <ul class="dropdown-menu m-0">
-                    <li><a class="dropdown-item" href="about.html">Pimpinan</a></li>
+                    <li><a class="dropdown-item" href="{{ route('about') }}">Pimpinan</a></li>
                     <li><a class="dropdown-item" href="">Sejarah</a></li>
                     <li><a class="dropdown-item" href="404.html">404 Page</a></li>
                 </ul>

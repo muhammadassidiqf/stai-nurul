@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\File;
+use Illuminate\Support\Str;
 
 class BeritaController extends Controller
 {
@@ -91,22 +92,27 @@ class BeritaController extends Controller
             ]
         ]);
         if ($validator->fails()) {
-            return redirect()->route('berita.create')->with('error', 'Data berita gagal diajukan');
+            return redirect()->route('berita.create')->with('error', 'Berita Gagal ditambahkan');
         }
         $user = Session::get('data');
+        $slug = Berita::where('slug', Str::slug($request->judul));
+        if ($slug) {
+            return redirect()->back()->with('error', "Judul sudah ada");
+        }
         $file = $request->file('file_gambar');
         $file_name = $file->getClientOriginalName();
         $file_name = preg_replace('!\s+!', ' ', $file_name);
         $file_name = str_replace(' ', '_', $file_name);
         $file_name = str_replace('%', '', $file_name);
         $file_name = pathinfo($file_name, PATHINFO_FILENAME) . '-' . time() . '.' . pathinfo($file_name, PATHINFO_EXTENSION);
-        $file->move(public_path("storage/img/'"), $file_name);
+        $file->move(public_path("storage/img/berita/"), $file_name);
         Berita::create([
             'user_id' => $user->id,
             'judul' => $request->judul,
             'isi' => $request->isi,
             'kategori' => $request->kategori,
-            'gambar' => $file_name
+            'gambar' => $file_name,
+            'slug' => Str::slug($request->judul)
         ]);
         return redirect()->back()->with('success', "Berita berhasil ditambahkan!");
     }
@@ -117,10 +123,6 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

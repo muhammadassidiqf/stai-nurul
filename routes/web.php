@@ -28,7 +28,7 @@ Route::middleware(['guest'])->group(function () {
 
 Route::group(['prefix' => ''], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/news', [HomeController::class, 'news'])->name('news');
+    // Route::get('/news', [HomeController::class, 'news'])->name('news');
     Route::get('/about', [HomeController::class, 'about'])->name('about');
     Route::get('/news/{slug}', [HomeController::class, 'newsbySlug'])->name('newsbySlug');
 });
@@ -42,6 +42,9 @@ Route::prefix('berita')->middleware(['isLogin'])->group(function () {
     Route::get('/list', [BeritaController::class, 'list'])->name('berita.list');
     Route::get('/create', [BeritaController::class, 'create'])->name('berita.create');
     Route::post('/store', [BeritaController::class, 'store'])->name('berita.store');
+    Route::get('/show/{id}', [BeritaController::class, 'show'])->name('berita.show');
+    Route::get('/edit/{id}', [BeritaController::class, 'edit'])->name('berita.edit');
+    Route::POST('/update/{id}', [BeritaController::class, 'update'])->name('berita.update');
 });
 
 Route::prefix('user')->middleware(['isLogin'])->group(function () {

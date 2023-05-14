@@ -40,14 +40,14 @@
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                                         <i class="bx bx-calendar fs-4"></i>
                                     </span>
-                                    <a href="app-calendar.html" class="stretched-link">Calendar</a>
+                                    <a href="" class="stretched-link">Calendar</a>
                                     <small class="text-muted mb-0">Appointments</small>
                                 </div>
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                                         <i class="bx bx-food-menu fs-4"></i>
                                     </span>
-                                    <a href="app-invoice-list.html" class="stretched-link">Invoice
+                                    <a href="" class="stretched-link">Invoice
                                         App</a>
                                     <small class="text-muted mb-0">Manage Accounts</small>
                                 </div>
@@ -57,14 +57,14 @@
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                                         <i class="bx bx-user fs-4"></i>
                                     </span>
-                                    <a href="app-user-list.html" class="stretched-link">User App</a>
+                                    <a href="" class="stretched-link">User App</a>
                                     <small class="text-muted mb-0">Manage Users</small>
                                 </div>
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                                         <i class="bx bx-check-shield fs-4"></i>
                                     </span>
-                                    <a href="app-access-roles.html" class="stretched-link">Role
+                                    <a href="" class="stretched-link">Role
                                         Management</a>
                                     <small class="text-muted mb-0">Permission</small>
                                 </div>
@@ -74,14 +74,14 @@
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                                         <i class="bx bx-pie-chart-alt-2 fs-4"></i>
                                     </span>
-                                    <a href="index.html" class="stretched-link">Dashboard</a>
+                                    <a href="" class="stretched-link">Dashboard</a>
                                     <small class="text-muted mb-0">User Profile</small>
                                 </div>
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                                         <i class="bx bx-cog fs-4"></i>
                                     </span>
-                                    <a href="pages-account-settings-account.html" class="stretched-link">Setting</a>
+                                    <a href="" class="stretched-link">Setting</a>
                                     <small class="text-muted mb-0">Account Settings</small>
                                 </div>
                             </div>
@@ -90,14 +90,14 @@
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                                         <i class="bx bx-help-circle fs-4"></i>
                                     </span>
-                                    <a href="pages-help-center-landing.html" class="stretched-link">Help Center</a>
+                                    <a href="" class="stretched-link">Help Center</a>
                                     <small class="text-muted mb-0">FAQs & Articles</small>
                                 </div>
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                                         <i class="bx bx-window-open fs-4"></i>
                                     </span>
-                                    <a href="modal-examples.html" class="stretched-link">Modals</a>
+                                    <a href=" class="stretched-link">Modals</a>
                                     <small class="text-muted mb-0">Useful Popups</small>
                                 </div>
                             </div>

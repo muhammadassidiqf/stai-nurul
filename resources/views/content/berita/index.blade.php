@@ -20,11 +20,11 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Isi</th>
+                                    <th width="20%">Judul</th>
+                                    <th width="30%">Isi</th>
                                     <th>Kategori</th>
                                     <th>Waktu</th>
-                                    <th>Action</th>
+                                    <th width="15%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,6 +36,38 @@
             </div>
         </div>
         <!--/ Referral, conversion, impression & income charts -->
+    </div>
+    <div class="modal modal-top fade" id="showdetail" tabindex="-1" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-xl">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTopTitle">Detail Berita</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12 text-center">
+                        <div class="spinner-border spinner-border-lg text-secondary" role="status">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal modal-top fade" id="showedit" tabindex="-1" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-xl">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTopTitle">Edit Berita</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12 text-center">
+                        <div class="spinner-border spinner-border-lg text-secondary" role="status">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 @endsection
 @section('scripts')
@@ -79,6 +111,26 @@
             $.fn.dataTable.ext.errMode = function(settings, helpPage, message) {
                 console.log(message);
             };
+
+            $('#showdetail').on('show.bs.modal', function(e) {
+                var button = $(e.relatedTarget);
+                var modal = $(this);
+                modal.find('.modal-body').empty()
+                modal.find('.modal-body').html(
+                    '<div class="col-12 text-center"><div class="spinner-border spinner-border-lg text-secondary" role="status"></div></div>'
+                )
+                modal.find('.modal-body').load(button.data("remote"));
+            });
+            $('#showedit').on('show.bs.modal', function(e) {
+                var button = $(e.relatedTarget);
+                var modal = $(this);
+                modal.find('.modal-body').empty()
+                modal.find('.modal-body').html(
+                    '<div class="col-12 text-center"><div class="spinner-border spinner-border-lg text-secondary" role="status"></div></div>'
+                )
+                modal.find('.modal-body').load(button.data("remote"));
+            });
+
         })
     </script>
 @endsection

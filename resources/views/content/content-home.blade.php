@@ -85,8 +85,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                    <i class="fa fa-car text-white"></i>
-                                                                                                                                                                </div> -->
+                                                                                                                                                                            <i class="fa fa-car text-white"></i>
+                                                                                                                                                                        </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Bahasa Arab</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -98,8 +98,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                    <i class="fa fa-users text-white"></i>
-                                                                                                                                                                </div> -->
+                                                                                                                                                                            <i class="fa fa-users text-white"></i>
+                                                                                                                                                                        </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Ekonomi Islam</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -111,8 +111,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                    <i class="fa fa-file-alt text-white"></i>
-                                                                                                                                                                </div> -->
+                                                                                                                                                                            <i class="fa fa-file-alt text-white"></i>
+                                                                                                                                                                        </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Pendidikan
                                     Agama
@@ -195,7 +195,7 @@
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($news as $n)
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
                             <div class="text-center p-4 pt-0">
                                 <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">News</div>

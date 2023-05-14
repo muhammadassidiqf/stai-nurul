@@ -58,8 +58,13 @@ class HomeController extends Controller
 
     public function newsbySlug($slug)
     {
-        $news = Berita::where('slug', $slug)->first();
-        return view('content.content-news', compact('news'));
+        $data = Berita::where('slug', $slug);
+        $news = $data->first();
+        $data->update([
+            'count' => (int)$news->count + 1
+        ]);
+        $popular = Berita::orderBy('created_at', 'desc')->orderBy('count', 'desc')->limit(4)->get();
+        return view('content.content-news', compact('news', 'popular'));
     }
 
     /**

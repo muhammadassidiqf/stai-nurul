@@ -53,10 +53,13 @@ class BeritaController extends Controller
                     return Carbon::parse($data->created_at)->translatedFormat('d F Y');
                 })
                 ->editColumn('aksi', function ($data) {
+                    $url = route('berita.show', encrypt($data->id));
+                    $edit = route('berita.edit', encrypt($data->id));
                     return '<div class="text-center">
-                    <button class="btn btn-primary btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showedit" data-remote=""">
+                    <button class="btn btn-primary btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showdetail" data-remote="' . $url . '">
                     <i class="bx bx-show"></i></button>
-                    <a class="btn btn-warning btn-sm" href="" target="_blank"><i class="bx bx-edit" ></i></a>
+                    <button class="btn btn-warning btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showedit" data-remote="' . $edit . '">
+                    <i class="bx bx-edit" ></i></button>
                     </div>';
                 })
                 ->rawColumns(['aksi'])
@@ -117,6 +120,12 @@ class BeritaController extends Controller
         return redirect()->back()->with('success', "Berita berhasil ditambahkan!");
     }
 
+    public function show($id)
+    {
+        $news = Berita::where('id', decrypt($id))->first();
+        return view('content.berita.show', compact('news'));
+    }
+
     /**
      * Display the specified resource.
      *
@@ -132,7 +141,8 @@ class BeritaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = Berita::where('id', decrypt($id))->first();
+        return view('content.berita.edit', compact('news'));
     }
 
     /**
@@ -144,7 +154,43 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'judul' => 'required',
+            'isi' => 'required',
+            'kategori' => 'required',
+            'file_gambar' => [
+                'required',
+                'image'
+            ]
+        ]);
+        $user = Session::get('data');
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', 'Berita Gagal diubah!');
+        }
+        $file = $request->file('file_gambar');
+        $file_name = $file->getClientOriginalName();
+        $file_name = preg_replace('!\s+!', ' ', $file_name);
+        $file_name = str_replace(' ', '_', $file_name);
+        $file_name = str_replace('%', '', $file_name);
+        $file_name = pathinfo($file_name, PATHINFO_FILENAME) . '-' . time() . '.' . pathinfo($file_name, PATHINFO_EXTENSION);
+        $data = Berita::where('id', decrypt($id));
+        $news = $data->first();
+        $path = public_path("storage/img/berita/" . $news->gambar);
+        if (File::exists($path)) {
+            File::delete($path);
+            $file->move(public_path("storage/img/berita/"), $file_name);
+        } else {
+            $file->move(public_path("storage/img/berita/"), $file_name);
+        }
+        $data->update([
+            'user_id' => $user->id,
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+            'kategori' => $request->kategori,
+            'gambar' => $file_name,
+            'slug' => Str::slug($request->judul)
+        ]);
+        return redirect()->route('berita.index')->with('success', "Berita berhasil diubah!");
     }
 
     /**

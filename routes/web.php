@@ -29,6 +29,7 @@ Route::middleware(['guest'])->group(function () {
 Route::group(['prefix' => ''], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     // Route::get('/news', [HomeController::class, 'news'])->name('news');
+    Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
     Route::get('/about', [HomeController::class, 'about'])->name('about');
     Route::get('/news/{slug}', [HomeController::class, 'newsbySlug'])->name('newsbySlug');
 });

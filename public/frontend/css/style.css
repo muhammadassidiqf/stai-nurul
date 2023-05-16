@@ -153,6 +153,15 @@
     
 }
 
+@media (min-width: 1200px) {
+    .container-profile{
+        position: relative;
+        margin-top: -500px;
+        z-index: 1000;
+    }
+    
+}
+
 
 /*** Header ***/
 .carousel-caption {
@@ -193,6 +202,10 @@
         height: 100%;
         object-fit: cover;
     }
+    
+    .profile-img {
+        margin-top: 20px;
+    }
 }
 
 
@@ -218,6 +231,11 @@
     .team-img {
         height:300px;
         width:300px;
+    }
+
+    .profile-img {
+        height:200px;
+        width:200px;
     }
 }
 

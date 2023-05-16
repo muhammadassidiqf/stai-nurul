@@ -28,6 +28,12 @@ class HomeController extends Controller
         return view('content.content-about');
     }
 
+    public function profile()
+    {
+        $news = Berita::orderBy('created_at', 'desc')->limit(3)->get();
+        return view('content.content-profile', compact('news'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

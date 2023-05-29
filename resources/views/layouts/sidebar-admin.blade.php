@@ -21,7 +21,7 @@
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Landing
                 Pages</span></li>
         <li class="menu-item">
-            <a href="{{ route('berita') }}" class="menu-link">
+            <a href="{{ route('admin.berita') }}" class="menu-link">
                 <i class='menu-icon tf-icons bx bx-news'></i>
                 <div data-i18n="Berita">Berita</div>
             </a>
@@ -35,12 +35,12 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-food-menu"></i>
-                <div data-i18n="Invoice">Invoice</div>
+                <div data-i18n="Invoice">Modul</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="" class="menu-link">
-                        <div data-i18n="List">List</div>
+                    <a href="{{ route('visi-misi.index') }}" class="menu-link">
+                        <div data-i18n="Visi Misi">Visi Misi</div>
                     </a>
                 </li>
                 <li class="menu-item">

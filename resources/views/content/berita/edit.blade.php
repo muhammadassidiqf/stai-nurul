@@ -1,4 +1,4 @@
-<form class="row g-3" action="{{ route('berita.update', encrypt($news->id)) }}" method="POST">
+<form class="row g-3" action="{{ route('admin.berita.update', encrypt($news->id)) }}" method="POST">
     @csrf
     <div class="col-12">
         <label class="form-label" for="collapsible-fullname">Judul</label>

@@ -6,6 +6,7 @@ use App\Models\User;
 use Yajra\DataTables\DataTables;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -59,25 +60,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'username' => 'required|unique:users,username',
+            'username' => 'required',
             'password' => 'required|min:8',
             'password_confirmation' => 'required|same:password'
         ]);
-        // dd($request->all());
-        try {
-
-            User::create([
-                'name' => $request->name,
-                'username' => $request->username,
-                'password' => $request->password,
-            ]);
-
-            return redirect('/admin')->with('success', "Account successfully registered.");
-        } catch (\Throwable $th) {
+        if ($validator->fails()) {
             return redirect()->back()->with('error', 'Terjadi kesalahan! Silakan coba lagi.');
         }
+        // dd($request->all());
+
+        User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'password' => $request->password,
+        ]);
+        return redirect('/admin')->with('success', "Account successfully registered.");
     }
 
     /**

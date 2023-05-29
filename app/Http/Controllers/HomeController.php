@@ -30,8 +30,28 @@ class HomeController extends Controller
 
     public function profile()
     {
+        return view('content.content-profile');
+    }
+
+    public function students()
+    {
         $news = Berita::orderBy('created_at', 'desc')->limit(3)->get();
-        return view('content.content-profile', compact('news'));
+        return view('content.content-students', compact('news'));
+    }
+
+    public function history()
+    {
+        return view('content.content-history');
+    }
+
+    public function visi_misi()
+    {
+        return view('content.content-visi');
+    }
+
+    public function academic()
+    {
+        return view('content.content-academic');
     }
 
     /**

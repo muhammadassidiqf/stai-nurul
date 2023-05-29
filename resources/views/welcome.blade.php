@@ -88,7 +88,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto m-mobile">
 
-                <a href="index.html" class="nav-item nav-link  active">Home</a>
+                <a href="index.html" class="nav-item nav-link  active">Dashboard</a>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" role="button"
                         data-bs-toggle="dropdown">Tentang</a>

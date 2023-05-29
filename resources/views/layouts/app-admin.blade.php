@@ -40,6 +40,8 @@
         <link rel="stylesheet" href="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
         <link rel="stylesheet" href="{{ asset('backend/vendor/libs/typeahead-js/typeahead.css') }}" />
         <link rel="stylesheet" href="{{ asset('backend/vendor/libs/select2/select2.css') }}" />
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
         <link rel="stylesheet" href="{{ asset('backend/vendor/libs/sweetalert2/sweetalert2.css') }}">
     @show
     @stack('styles')
@@ -56,6 +58,11 @@
 </head>
 
 <body>
+    @if (session('success'))
+        <div class="success-session" data-flashdata="{{ session('success') }}"></div>
+    @elseif(session('error'))
+        <div class="error-session" data-flashdata="{{ session('error') }}"></div>
+    @endif
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
@@ -82,6 +89,8 @@
 
         <!-- Drag Target Area To SlideIn Menu On Small Screens -->
         <div class="drag-target"></div>
+
+        @stack('modals')
     </div>
     <!-- / Layout wrapper -->
 
@@ -99,11 +108,32 @@
         <script src="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
         <script src="{{ asset('backend/vendor/libs/typeahead-js/typeahead.js') }}"></script>
         <script src="{{ asset('backend/vendor/libs/sweetalert2/sweetalert2.js') }}"></script>
+        <script src="{{ asset('backend/vendor/libs/select2/select2.js') }}"></script>
         <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/super-build/ckeditor.js"></script>
         <!-- Main JS -->
         <script src="{{ asset('backend/js/main.js') }}"></script>
     @show
     @stack('scripts')
+    <script>
+        let flashdatasukses = $('.success-session').data('flashdata');
+        if (flashdatasukses) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: flashdatasukses,
+                type: 'success'
+            })
+        }
+        let flashdataerror = $('.error-session').data('flashdata');
+        if (flashdataerror) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: flashdataerror,
+                type: 'error'
+            })
+        }
+    </script>
 </body>
 
 </html>

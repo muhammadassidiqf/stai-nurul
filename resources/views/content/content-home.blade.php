@@ -85,8 +85,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                            <i class="fa fa-car text-white"></i>
-                                                                                                                                                                        </div> -->
+                                                                                                                                                                                        <i class="fa fa-car text-white"></i>
+                                                                                                                                                                                    </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Bahasa Arab</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -98,8 +98,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                            <i class="fa fa-users text-white"></i>
-                                                                                                                                                                        </div> -->
+                                                                                                                                                                                        <i class="fa fa-users text-white"></i>
+                                                                                                                                                                                    </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Ekonomi Islam</h5>
                                 <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
@@ -111,8 +111,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                            <i class="fa fa-file-alt text-white"></i>
-                                                                                                                                                                        </div> -->
+                                                                                                                                                                                        <i class="fa fa-file-alt text-white"></i>
+                                                                                                                                                                                    </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Pendidikan
                                     Agama
@@ -133,7 +133,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6">
-                    <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px;">
+                    <div class="position-relative overflow-hidden ps-5 pt-5 h-100">
                         <img class="position-absolute w-100 h-100" src="{{ asset('') }}frontend/img/about-campus.jpg"
                             alt="" style="object-fit: cover;">
                         <img class="position-absolute top-0 start-0 bg-white pe-3 pb-3"
@@ -249,25 +249,6 @@
     <!-- Courses End -->
 
 
-    <!-- Features Start -->
-    <div class="container-xxl py-6">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-12">
-                    <div class="position-relative overflow-hidden pe-5 pt-5 h-100 img-video">
-                        <img class="position-absolute w-100 h-100" src="{{ asset('') }}frontend/img/about-1.jpg"
-                            alt="" style="object-fit: cover;">
-                        <img class="position-absolute top-0 end-0 bg-white ps-3 pb-3"
-                            src="{{ asset('') }}frontend/img/about-2.jpg" alt=""
-                            style="width: 200px; height: 200px">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Features End -->
-
-
     <!-- Team Start -->
     <div class="container-xxl py-6">
         <div class="container">
@@ -359,70 +340,4 @@
         </div>
     </div>
     <!-- Team End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-6">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h6 class="text-primary text-uppercase mb-2">Alumni</h6>
-                <h1 class="display-6 mb-4">Get Involved</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle mx-auto"
-                                    src="{{ asset('') }}frontend/img/testimonial-1.jpg" alt="">
-                                <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                                    style="width: 60px; height: 60px;">
-                                    <i class="fa fa-quote-left fa-2x text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                            </p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Students Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle mx-auto"
-                                    src="{{ asset('') }}frontend/img/testimonial-2.jpg" alt="">
-                                <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                                    style="width: 60px; height: 60px;">
-                                    <i class="fa fa-quote-left fa-2x text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                            </p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Students Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle mx-auto"
-                                    src="{{ asset('') }}frontend/img/testimonial-3.jpg" alt="">
-                                <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                                    style="width: 60px; height: 60px;">
-                                    <i class="fa fa-quote-left fa-2x text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                            </p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Students Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
 @endsection

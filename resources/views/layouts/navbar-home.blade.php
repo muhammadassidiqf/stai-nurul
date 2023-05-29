@@ -47,24 +47,17 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto m-mobile">
 
-            <a href="{{ route('home') }}" class="nav-item nav-link  active">Home</a>
+            {{-- <a href="{{ route('home') }}" class="nav-item nav-link  active">Home</a> --}}
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Tentang</a>
                 <ul class="dropdown-menu m-0">
+                    <li><a class="dropdown-item" href="{{ route('history') }}">Sejarah</a></li>
+                    <li><a class="dropdown-item" href="{{ route('visi_misi') }}">Visi Misi</a></li>
                     <li><a class="dropdown-item" href="{{ route('about') }}">Pimpinan</a></li>
-                    <li><a class="dropdown-item" href="">Sejarah</a></li>
-                    <li><a class="dropdown-item" href="404.html">404 Page</a></li>
                 </ul>
             </li>
-            <a href="courses.html" class="nav-item nav-link">Kemahasiswaan</a>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Akademik</a>
-                <ul class="dropdown-menu m-0">
-                    <li><a class="dropdown-item" href="">Our Team</a></li>
-                    <li><a class="dropdown-item" href="">Testimonial</a></li>
-                    <li><a class="dropdown-item" href="404.html">404 Page</a></li>
-                </ul>
-            </li>
+            <a href="{{ route('students') }}" class="nav-item nav-link">Kemahasiswaan</a>
+            <a href="{{ route('academic') }}" class="nav-item nav-link">Akademik</a>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Media</a>
                 <ul class="dropdown-menu m-0">

@@ -11,7 +11,7 @@
             </div>
             <!-- /Logo -->
 
-            <form class="mb-3" action="{{ route('ceklogin') }}" method="POST">
+            <form class="mb-3" action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>

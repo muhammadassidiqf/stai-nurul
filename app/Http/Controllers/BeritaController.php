@@ -53,8 +53,8 @@ class BeritaController extends Controller
                     return Carbon::parse($data->created_at)->translatedFormat('d F Y');
                 })
                 ->editColumn('aksi', function ($data) {
-                    $url = route('berita.show', encrypt($data->id));
-                    $edit = route('berita.edit', encrypt($data->id));
+                    $url = route('admin.berita.show', encrypt($data->id));
+                    $edit = route('admin.berita.edit', encrypt($data->id));
                     return '<div class="text-center">
                     <button class="btn btn-primary btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showdetail" data-remote="' . $url . '">
                     <i class="bx bx-show"></i></button>
@@ -98,7 +98,7 @@ class BeritaController extends Controller
             return redirect()->route('berita.create')->with('error', 'Berita Gagal ditambahkan');
         }
         $user = Session::get('data');
-        $slug = Berita::where('slug', Str::slug($request->judul));
+        $slug = Berita::where('slug', Str::slug($request->judul))->first();
         if ($slug) {
             return redirect()->back()->with('error', "Judul sudah ada");
         }

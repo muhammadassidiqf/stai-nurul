@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="row mb-3">
-        <label class="col-sm-2" for="basic-default-title">Judul</label>
+        <label class="col-sm-2" for="basic-default-title">Gambar</label>
         <div class="col-sm-10">
             <img src="{{ asset('storage/img/berita/' . $news->gambar) }}" width="140" height="150"
                 class="rounded-start" alt="View Sales">

@@ -10,7 +10,7 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between mx-auto">
                         <h4 class="breadcrumb-wrapper mb-4">Data Berita</h4>
-                        <a href="{{ route('berita.create') }}" class="btn btn-primary"><i
+                        <a href="{{ route('admin.berita.create') }}" class="btn btn-primary"><i
                                 class='bx bxs-add-to-queue'></i>&nbsp;Tambah Berita</a>
                     </div>
                 </div>
@@ -37,6 +37,8 @@
         </div>
         <!--/ Referral, conversion, impression & income charts -->
     </div>
+@endsection
+@push('modals')
     <div class="modal modal-top fade" id="showdetail" tabindex="-1" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-xl">
             <form class="modal-content">
@@ -69,7 +71,7 @@
             </form>
         </div>
     </div>
-@endsection
+@endpush
 @section('scripts')
     @parent
     <script>
@@ -78,7 +80,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: "{{ route('berita.list') }}",
+                    url: "{{ route('admin.berita.list') }}",
                 },
                 columns: [{
                         data: 'DT_RowIndex',

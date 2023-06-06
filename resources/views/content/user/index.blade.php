@@ -37,6 +37,24 @@
         <!--/ Referral, conversion, impression & income charts -->
     </div>
 @endsection
+@push('modals')
+    <div class="modal modal-top fade" id="showedit" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-xl">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTopTitle">Edit User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12 text-center">
+                        <div class="spinner-border spinner-border-lg text-secondary" role="status">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+@endpush
 @section('scripts')
     @parent
     <script>
@@ -74,6 +92,16 @@
             $.fn.dataTable.ext.errMode = function(settings, helpPage, message) {
                 console.log(message);
             };
+            $('#showedit').on('show.bs.modal', function(e) {
+                var button = $(e.relatedTarget);
+                var modal = $(this);
+                modal.find('.modal-body').empty()
+                modal.find('.modal-body').html(
+                    '<div class="col-12 text-center"><div class="spinner-border spinner-border-lg text-secondary" role="status"></div></div>'
+                )
+                modal.find('.modal-body').load(button.data("remote"));
+            });
+
         })
     </script>
 @endsection

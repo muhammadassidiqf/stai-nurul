@@ -21,6 +21,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th width="30%">Isi</th>
+                                    <th>Editor</th>
                                     <th>Status</th>
                                     <th>Waktu</th>
                                     <th width="15%">Action</th>
@@ -55,7 +56,7 @@
             </form>
         </div>
     </div>
-    <div class="modal modal-top fade" id="showedit" tabindex="-1" aria-modal="true" role="dialog">
+    <div class="modal modal-top fade" id="showedit" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-xl">
             <form class="modal-content">
                 <div class="modal-header">
@@ -93,6 +94,10 @@
                     {
                         data: 'isi',
                         name: 'isi'
+                    },
+                    {
+                        data: 'user',
+                        name: 'user'
                     },
                     {
                         data: 'status',

@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\VisiMisi;
-use Illuminate\Http\Request;
-use Yajra\DataTables\DataTables;
+use App\Models\Sejarah;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rules\File;
-use Illuminate\Support\Str;
+use Yajra\DataTables\Facades\DataTables;
 
-class VisiMisiController extends Controller
+class SejarahController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,14 +17,14 @@ class VisiMisiController extends Controller
      */
     public function index()
     {
-        return view('content.visi-misi.index');
+        return view('content.sejarah.index');
     }
 
     public function list()
     {
-        $data = VisiMisi::with(['user'])->get();
+        $data = Sejarah::with(['user'])->get();
         if (request()->ajax()) {
-            return Datatables::of($data)
+            return DataTables::of($data)
                 ->addIndexColumn()
                 ->editColumn('isi', function ($data) {
                     $string = strip_tags($data->isi);
@@ -61,8 +58,8 @@ class VisiMisiController extends Controller
                     return Carbon::parse($data->created_at)->translatedFormat('d F Y');
                 })
                 ->editColumn('aksi', function ($data) {
-                    $url = route('visi-misi.show', encrypt($data->id));
-                    $edit = route('visi-misi.edit', encrypt($data->id));
+                    $url = route('sejarah.show', encrypt($data->id));
+                    $edit = route('sejarah.edit', encrypt($data->id));
                     return '<div class="text-center">
                     <button class="btn btn-primary btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showdetail" data-remote="' . $url . '">
                     <i class="bx bx-show"></i></button>
@@ -82,7 +79,7 @@ class VisiMisiController extends Controller
      */
     public function create()
     {
-        return view('content.visi-misi.create');
+        return view('content.sejarah.create');
     }
 
     /**
@@ -98,20 +95,24 @@ class VisiMisiController extends Controller
             'status' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect()->route('visi-misi.create')->with('error', 'Data Visi Misi belum lengkap');
+            return redirect()->route('sejarah.create')->with('error', 'Data Sejarah belum lengkap');
         }
         if ($request->status == "1") {
-            VisiMisi::where('status', '=', 1)->update(['status' => 0]);
+            Sejarah::where('status', '=', 1)->update(['status' => 0]);
         }
-        $ins = VisiMisi::create([
+        $active = Sejarah::where('status', '=', 1);
+        if ($request->status == "1" && !!$active->get()) {
+            $active->update(['status' => 0]);
+        }
+        $ins = Sejarah::create([
             'user_id' => auth()->user()->id,
             'isi' => $request->isi,
             'status' => $request->status
         ]);
         if ($ins) {
-            return redirect()->route('visi-misi.index')->with('success', 'Visi Misi Berhasil ditambahkan');
+            return redirect()->route('sejarah.index')->with('success', 'Data Sejarah Berhasil ditambahkan');
         }
-        return redirect()->route('visi-misi.create')->with('error', 'Visi Misi Gagal ditambahkan');
+        return redirect()->route('sejarah.create')->with('error', 'Data Sejarah Gagal ditambahkan');
     }
 
     /**
@@ -122,8 +123,8 @@ class VisiMisiController extends Controller
      */
     public function show($id)
     {
-        $data = VisiMisi::with(['user'])->where('id', decrypt($id))->first();
-        return view('content.visi-misi.show', compact('data'));
+        $data = Sejarah::with(['user'])->where('id', decrypt($id))->first();
+        return view('content.sejarah.show', compact('data'));
     }
 
     /**
@@ -134,8 +135,8 @@ class VisiMisiController extends Controller
      */
     public function edit($id)
     {
-        $data = VisiMisi::with(['user'])->where('id', decrypt($id))->first();
-        return view('content.visi-misi.edit', compact('data'));
+        $data = Sejarah::with(['user'])->where('id', decrypt($id))->first();
+        return view('content.sejarah.edit', compact('data'));
     }
 
     /**
@@ -152,23 +153,23 @@ class VisiMisiController extends Controller
             'status' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect()->route('visi-misi.index')->with('error', 'Data Visi Misi belum lengkap');
+            return redirect()->route('sejarah.index')->with('error', 'Data Sejarah belum lengkap');
         }
-        $active = VisiMisi::where('status', '=', 1);
+        $active = Sejarah::where('status', '=', 1);
         if ($request->status == "1" && !!$active->get()) {
             $active->update(['status' => 0]);
         } else if ($request->status == "0" && !!$active->where('id', '=', decrypt($id))->get()) {
-            return redirect()->route('visi-misi.index')->with('error', 'Data Visi Misi Tidak ada yang active!');
+            return redirect()->route('sejarah.index')->with('error', 'Data Sejarah Tidak ada yang active!');
         }
-        $upd = VisiMisi::where('id', '=', decrypt($id))->update([
+        $upd = Sejarah::where('id', '=', decrypt($id))->update([
             'user_id' => auth()->user()->id,
             'isi' => $request->isi,
             'status' => $request->status
         ]);
         if ($upd) {
-            return redirect()->route('visi-misi.index')->with('success', 'Visi Misi Berhasil diubah');
+            return redirect()->route('sejarah.index')->with('success', 'Data Sejarah Berhasil diubah');
         }
-        return redirect()->route('visi-misi.index')->with('error', 'Visi Misi Gagal diubah');
+        return redirect()->route('sejarah.index')->with('error', 'Data Sejarah Gagal diubah');
     }
 
     /**

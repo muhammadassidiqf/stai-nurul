@@ -21,13 +21,13 @@
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Landing
                 Pages</span></li>
         <li class="menu-item">
-            <a href="{{ route('admin.berita') }}" class="menu-link">
+            <a href="{{ route('berita.index') }}" class="menu-link">
                 <i class='menu-icon tf-icons bx bx-news'></i>
                 <div data-i18n="Berita">Berita</div>
             </a>
         </li>
         <li class="menu-item">
-            <a href="{{ route('user') }}" class="menu-link">
+            <a href="{{ route('user.index') }}" class="menu-link">
                 <i class='menu-icon tf-icons bx bx-user'></i>
                 <div data-i18n="Pengguna">Pengguna</div>
             </a>
@@ -35,7 +35,7 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-food-menu"></i>
-                <div data-i18n="Invoice">Modul</div>
+                <div data-i18n="Invoice">Modul Tentang</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
@@ -44,18 +44,18 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="" class="menu-link">
-                        <div data-i18n="Preview">Preview</div>
+                    <a href="{{ route('sejarah.index') }}" class="menu-link">
+                        <div data-i18n="Preview">Sejarah</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('tentang.index') }}" class="menu-link">
+                        <div data-i18n="Edit">Tentang</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="" class="menu-link">
-                        <div data-i18n="Edit">Edit</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="" class="menu-link">
-                        <div data-i18n="Add">Add</div>
+                        <div data-i18n="Add">Struktur Organisasi</div>
                     </a>
                 </li>
             </ul>

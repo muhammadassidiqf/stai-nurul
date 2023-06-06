@@ -28,27 +28,15 @@
     <div class="container-xxl py-6">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="h-100">
-                        <h1 class="display-6 mb-4 text-center">STAI NURUL IMAN</h1>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
-                            Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
-                        </p>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
-                            diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                            dolore erat amet</p>
-                        <div class="row g-4">
-                            <div class="col-lg-6 col-md-12 col-sm-12">
-                                <a class="btn btn-primary py-3 px-5 m-2" href="">Pendaftaran</a>
-                                <a class="d-inline-flex align-items-center btn btn-outline-primary border-2 p-2 m-2"
-                                    href="tel:+0123456789">
-                                    <span class="flex-shrink-0 btn-square bg-primary">
-                                        <i class="fa fa-phone-alt text-white"></i>
-                                    </span>
-                                    <span class="px-3">+012 345 6789</span>
-                                </a>
-                            </div>
-                        </div>
+                <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
+                    {!! $data->isi !!}
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 p-lg-4">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">Tentang</a>
+                        <a href="#" class="list-group-item list-group-item-action">Sejarah</a>
+                        <a href="#" class="list-group-item list-group-item-action">Visi Misi</a>
+                        <a href="#" class="list-group-item list-group-item-action">Struktur Organisasi</a>
                     </div>
                 </div>
             </div>

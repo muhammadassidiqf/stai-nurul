@@ -26,7 +26,7 @@ class UserController extends Controller
         if (request()->ajax()) {
             return Datatables::of($data)
                 ->addIndexColumn()
-                ->editColumn('judul', function ($data) {
+                ->editColumn('name', function ($data) {
                     return $data->name;
                 })
                 ->editColumn('isi', function ($data) {
@@ -36,8 +36,13 @@ class UserController extends Controller
                     return Carbon::parse($data->created_at)->translatedFormat('d F Y');
                 })
                 ->editColumn('aksi', function ($data) {
-                    return 'aksi';
+                    $edit = route('user.edit', encrypt($data->id));
+                    return '<div class="text-center">
+                    <button class="btn btn-warning btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showedit" data-remote="' . $edit . '">
+                    <i class="bx bx-edit" ></i></button>
+                    </div>';
                 })
+                ->rawColumns(['aksi'])
                 ->make(true);
         }
     }
@@ -76,7 +81,7 @@ class UserController extends Controller
             'username' => $request->username,
             'password' => $request->password,
         ]);
-        return redirect('/admin')->with('success', "Account successfully registered.");
+        return redirect()->route('user.index')->with('success', "Account successfully registered.");
     }
 
     /**
@@ -98,7 +103,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = User::where('id', decrypt($id))->first();
+        return view('content.user.edit', compact('data'));
     }
 
     /**
@@ -110,7 +116,25 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'username' => 'required',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|same:password'
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan! Silakan coba lagi.');
+        }
+        $check = User::where('username', $request->username)->where('id', decrypt($id))->first();
+        if ($check) {
+            $check->update([
+                'username' => $request->username,
+                'password' => $request->password,
+            ]);
+            return redirect()->route('user.index')->with('success', "Data User berhasil diubah.");
+        }
+        $check = User::where('username', $request->username)->first();
+        if ($check)
+            return redirect()->route('user.index')->with('error', 'Username sudah tersedia! Silakan coba lagi.');
     }
 
     /**

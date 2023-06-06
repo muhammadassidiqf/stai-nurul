@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Sejarah;
+use App\Models\Tentang;
+use App\Models\VisiMisi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,7 +28,8 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('content.content-about');
+        $data = Tentang::where('status', '1')->first();
+        return view('content.content-about', compact('data'));
     }
 
     public function profile()
@@ -41,12 +45,14 @@ class HomeController extends Controller
 
     public function history()
     {
-        return view('content.content-history');
+        $data = Sejarah::where('status', '1')->first();
+        return view('content.content-history', compact('data'));
     }
 
     public function visi_misi()
     {
-        return view('content.content-visi');
+        $data = VisiMisi::where('status', '1')->first();
+        return view('content.content-visi', compact('data'));
     }
 
     public function academic()

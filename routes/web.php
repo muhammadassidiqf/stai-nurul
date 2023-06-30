@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +47,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     Route::get('/visi-misi/list', [VisiMisiController::class, 'list'])->name('visi-misi.list');
     Route::resource('visi-misi', VisiMisiController::class);
+
+    Route::get('/prodi/list', [ProdiController::class, 'list'])->name('prodi.list');
+    Route::resource('prodi', ProdiController::class);
 
     Route::prefix('user')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('user');

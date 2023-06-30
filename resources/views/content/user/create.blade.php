@@ -41,7 +41,7 @@
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
-                            <button class="btn btn-primary d-grid w-100">Submit</button>
+                            <button class="btn btn-primary d-grid w-100" type="submit">Submit</button>
                         </form>
                     </div>
                 </div>

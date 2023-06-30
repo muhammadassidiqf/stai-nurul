@@ -13,18 +13,18 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="card">
-                <h5 class="card-header">Tambah Visi Misi</h5>
+                <h5 class="card-header">Tambah Sejarah</h5>
                 <div class="card-body">
-                    <form action="{{ route('visi-misi.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('sejarah.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="basic-default-email">Isi Visi Misi</label>
+                            <label class="col-sm-2 col-form-label" for="basic-default-email">Isi Sejarah</label>
                             <div class="col-sm-10">
                                 <textarea name="isi" id="editor" rows="30"></textarea>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="basic-default-company">Status Visi Misi</label>
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Status Sejarah</label>
                             <div class="col-sm-10">
                                 <select name="status" id="status" class="form-control" required>
                                     <option value=""></option>
@@ -128,7 +128,7 @@
                 ]
             },
             // https://ckeditor.com/docs/ckeditor5/latest/features/editor-placeholder.html#using-the-editor-configuration
-            placeholder: 'Masukan Isi Visi Misi!',
+            placeholder: 'Masukan Isi Sejarah!',
             // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-family-feature
             fontFamily: {
                 options: [

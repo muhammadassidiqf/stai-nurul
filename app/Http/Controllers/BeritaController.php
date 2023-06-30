@@ -53,8 +53,8 @@ class BeritaController extends Controller
                     return Carbon::parse($data->created_at)->translatedFormat('d F Y');
                 })
                 ->editColumn('aksi', function ($data) {
-                    $url = route('admin.berita.show', encrypt($data->id));
-                    $edit = route('admin.berita.edit', encrypt($data->id));
+                    $url = route('berita.show', encrypt($data->id));
+                    $edit = route('berita.edit', encrypt($data->id));
                     return '<div class="text-center">
                     <button class="btn btn-primary btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showdetail" data-remote="' . $url . '">
                     <i class="bx bx-show"></i></button>
@@ -94,10 +94,10 @@ class BeritaController extends Controller
                 'image'
             ]
         ]);
+        // dd($request->all());
         if ($validator->fails()) {
             return redirect()->route('berita.create')->with('error', 'Berita Gagal ditambahkan');
         }
-        $user = Session::get('data');
         $slug = Berita::where('slug', Str::slug($request->judul))->first();
         if ($slug) {
             return redirect()->back()->with('error', "Judul sudah ada");
@@ -110,14 +110,14 @@ class BeritaController extends Controller
         $file_name = pathinfo($file_name, PATHINFO_FILENAME) . '-' . time() . '.' . pathinfo($file_name, PATHINFO_EXTENSION);
         $file->move(public_path("storage/img/berita/"), $file_name);
         Berita::create([
-            'user_id' => $user->id,
+            'user_id' => auth()->user()->id,
             'judul' => $request->judul,
             'isi' => $request->isi,
             'kategori' => $request->kategori,
             'gambar' => $file_name,
             'slug' => Str::slug($request->judul)
         ]);
-        return redirect()->back()->with('success', "Berita berhasil ditambahkan!");
+        return redirect()->route('berita.index')->with('success', "Berita berhasil ditambahkan!");
     }
 
     public function show($id)

@@ -15,7 +15,7 @@
             <div class="card">
                 <h5 class="card-header">Tambah Berita</h5>
                 <div class="card-body">
-                    <form action="{{ route('admin.berita.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Berita</label>
@@ -60,10 +60,12 @@
     @parent
     <script>
         CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
-            // https://ckeditor.com/docs/ckeditor5/latest/features/toolbar/toolbar.html#extended-toolbar-configuration-format
+            ckfinder: {
+                uploadUrl: "{{ route('image.upload') . '?_token=' . csrf_token() }}",
+            },
             toolbar: {
                 items: [
-                    'exportPDF', 'exportWord', '|',
+                    'exportPDF', 'exportWord', 'ImageUpload', '|',
                     'findAndReplace', 'selectAll', '|',
                     'heading', '|',
                     'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript',
@@ -209,7 +211,6 @@
                 // 'ExportPdf',
                 // 'ExportWord',
                 'CKBox',
-                'CKFinder',
                 'EasyImage',
                 // This sample uses the Base64UploadAdapter to handle image uploads as it requires no configuration.
                 // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/base64-upload-adapter.html

@@ -32,7 +32,7 @@
 
 
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-xl bg-white navbar-light sticky-top p-0">
+<nav class="navbar navbar-expand-xl bg-white navbar-light border-bottom border-black sticky-top p-0">
     <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"><img
             src="{{ asset('frontend/img/stai-logo.png') }}" class="img-logo" alt=""> <span
             class="fw-bolder text-primary">STAI
@@ -49,11 +49,13 @@
 
             {{-- <a href="{{ route('home') }}" class="nav-item nav-link  active">Home</a> --}}
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Tentang</a>
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Tentang Stai
+                    Nurul Iman</a>
                 <ul class="dropdown-menu m-0">
+                    <li><a class="dropdown-item" href="{{ route('about') }}">Tentang</a></li>
                     <li><a class="dropdown-item" href="{{ route('history') }}">Sejarah</a></li>
                     <li><a class="dropdown-item" href="{{ route('visi_misi') }}">Visi Misi</a></li>
-                    <li><a class="dropdown-item" href="{{ route('about') }}">Pimpinan</a></li>
+                    <li><a class="dropdown-item" href="">Struktur Organisasi</a></li>
                 </ul>
             </li>
             <a href="{{ route('students') }}" class="nav-item nav-link">Kemahasiswaan</a>

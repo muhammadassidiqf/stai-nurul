@@ -9,9 +9,9 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between mx-auto">
-                        <h4 class="breadcrumb-wrapper mb-4">Data Berita</h4>
-                        <a href="{{ route('berita.create') }}" class="btn btn-primary"><i
-                                class='bx bxs-add-to-queue'></i>&nbsp;Tambah Berita</a>
+                        <h4 class="breadcrumb-wrapper mb-4">Data Sejarah</h4>
+                        <a href="{{ route('sejarah.create') }}" class="btn btn-primary"><i
+                                class='bx bxs-add-to-queue'></i>&nbsp;Tambah Sejarah</a>
                     </div>
                 </div>
                 <div class="card-body pb-2">
@@ -20,9 +20,9 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th width="20%">Judul</th>
                                     <th width="30%">Isi</th>
-                                    <th>Kategori</th>
+                                    <th>Editor</th>
+                                    <th>Status</th>
                                     <th>Waktu</th>
                                     <th width="15%">Action</th>
                                 </tr>
@@ -38,12 +38,13 @@
         <!--/ Referral, conversion, impression & income charts -->
     </div>
 @endsection
+
 @push('modals')
     <div class="modal modal-top fade" id="showdetail" tabindex="-1" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-xl">
             <form class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTopTitle">Detail Berita</h5>
+                    <h5 class="modal-title" id="modalTopTitle">Detail Sejarah</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -55,11 +56,11 @@
             </form>
         </div>
     </div>
-    <div class="modal modal-top fade" id="showedit" tabindex="-1" aria-modal="true" role="dialog">
+    <div class="modal modal-top fade" id="showedit" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-xl">
             <form class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTopTitle">Edit Berita</h5>
+                    <h5 class="modal-title" id="modalTopTitle">Edit Sejarah</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -72,6 +73,7 @@
         </div>
     </div>
 @endpush
+
 @section('scripts')
     @parent
     <script>
@@ -80,7 +82,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: "{{ route('berita.list') }}",
+                    url: "{{ route('sejarah.list') }}",
                 },
                 columns: [{
                         data: 'DT_RowIndex',
@@ -88,17 +90,18 @@
                         className: 'text-center',
                         orderable: false,
                         searchable: false
-                    }, {
-                        data: 'judul',
-                        name: 'judul'
                     },
                     {
                         data: 'isi',
                         name: 'isi'
                     },
                     {
-                        data: 'kategori',
-                        name: 'kategori'
+                        data: 'user',
+                        name: 'user'
+                    },
+                    {
+                        data: 'status',
+                        name: 'status'
                     },
                     {
                         data: 'waktu',

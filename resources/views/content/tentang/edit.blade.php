@@ -1,28 +1,17 @@
-<form class="row g-3" action="{{ route('berita.update', encrypt($news->id)) }}" method="POST">
+<form class="row g-3" action="{{ route('tentang.update', encrypt($data->id)) }}" method="POST">
     @csrf
+    @method('PUT')
     <div class="col-12">
-        <label class="form-label" for="collapsible-fullname">Judul</label>
-        <input type="text" name="judul" class="form-control" value="{{ $news->judul }}">
+        <label class="form-label" for="collapsible-address">Isi Tentang</label>
+        <textarea name="isi" id="editor1" rows="30">{{ $data->isi }}</textarea>
     </div>
-    <div class="col-12">
-        <label class="form-label" for="collapsible-address">Isi Berita</label>
-        <textarea name="isi" id="editor1" rows="30">{{ $news->isi }}</textarea>
-    </div>
-    <div class="col-12">
-        <label class="form-label" for="collapsible-phone">Kategori</label>
-        <input type="text" name="Kategori" class="form-control" value="{{ $news->kategori }}">
-    </div>
-    <div class="col-12">
-        <label class="form-label" for="collapsible-phone">File Gambar</label>
-        <div class="row g-3">
-            <div class="col-md-5">
-                <a class="btn btn-primary me-sm-3 me-1" href="{{ asset('storage/img/berita/' . $news->gambar) }}"
-                    target="_blank">{{ $news->gambar }}</a>
-            </div>
-            <div class="col-md-12">
-                <input type="file" name="file_gambar" class="form-control" id="inputGroupFile01">
-            </div>
-        </div>
+    <div class="col-12" id="form-select">
+        <label class="form-label" for="collapsible-phone">Status</label>
+        <select name="status" id="status" class="form-control" required>
+            <option value=""></option>
+            <option value="0" @if ($data->status == 0) selected @endif>Not Active</option>
+            <option value="1" @if ($data->status == 1) selected @endif>Active</option>
+        </select>
     </div>
     <div class="col-12 text-center mt-4">
         <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
@@ -32,15 +21,21 @@
     </div>
 </form>
 <script>
+    $("#status").select2({
+        dropdownParent: $("#showedit #form-select"),
+        theme: "bootstrap-5",
+        placeholder: "Pilih Salah Satu",
+    });
     CKEDITOR.ClassicEditor.create(document.getElementById("editor1"), {
-        // https://ckeditor.com/docs/ckeditor5/latest/features/toolbar/toolbar.html#extended-toolbar-configuration-format
+        ckfinder: {
+            uploadUrl: "{{ route('image.upload') . '?_token=' . csrf_token() }}",
+        },
         toolbar: {
             items: [
-                'exportPDF', 'exportWord', '|',
+                'exportPDF', 'exportWord', 'ImageUpload', '|',
                 'findAndReplace', 'selectAll', '|',
                 'heading', '|',
-                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript',
-                'superscript',
+                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript',
                 'removeFormat', '|',
                 'bulletedList', 'numberedList', 'todoList', '|',
                 'outdent', 'indent', '|',
@@ -110,7 +105,7 @@
             ]
         },
         // https://ckeditor.com/docs/ckeditor5/latest/features/editor-placeholder.html#using-the-editor-configuration
-        placeholder: 'Masukan Isi Berita!',
+        placeholder: 'Masukan Isi Tentang Stai Nurul Iman!',
         // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-family-feature
         fontFamily: {
             options: [
@@ -165,14 +160,11 @@
             feeds: [{
                 marker: '@',
                 feed: [
-                    '@apple', '@bears', '@brownie', '@cake', '@cake', '@candy',
-                    '@canes',
+                    '@apple', '@bears', '@brownie', '@cake', '@cake', '@candy', '@canes',
                     '@chocolate', '@cookie', '@cotton', '@cream',
-                    '@cupcake', '@danish', '@donut', '@dragée', '@fruitcake',
-                    '@gingerbread',
+                    '@cupcake', '@danish', '@donut', '@dragée', '@fruitcake', '@gingerbread',
                     '@gummi', '@ice', '@jelly-o',
-                    '@liquorice', '@macaroon', '@marzipan', '@oat', '@pie', '@plum',
-                    '@pudding',
+                    '@liquorice', '@macaroon', '@marzipan', '@oat', '@pie', '@plum', '@pudding',
                     '@sesame', '@snaps', '@soufflé',
                     '@sugar', '@sweet', '@topping', '@wafer'
                 ],
@@ -186,7 +178,6 @@
             // 'ExportPdf',
             // 'ExportWord',
             'CKBox',
-            'CKFinder',
             'EasyImage',
             // This sample uses the Base64UploadAdapter to handle image uploads as it requires no configuration.
             // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/base64-upload-adapter.html

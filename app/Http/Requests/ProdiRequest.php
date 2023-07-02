@@ -26,10 +26,10 @@ class ProdiRequest extends FormRequest
         $rules = [
             'prodi' => 'required',
             'isi' => 'required',
-            'file_gambar' => [
-                'required',
-                'image'
-            ]
+            // 'file_gambar' => [
+            //     'required',
+            //     'image'
+            // ]
         ];
         return $rules;
     }

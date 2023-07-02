@@ -89,8 +89,9 @@ class ProdiController extends Controller
      */
     public function update(ProdiRequest $request, ProdiService $prodiService, $id)
     {
-        $data['prodi'] = $request->prodi;
-        $data['isi'] = $request->isi;
+        // $data['prodi'] = $request->prodi;
+        // $data['isi'] = $request->isi;
+        $data = $request->validated();
         try {
             $slug = Prodi::where('slug', Str::slug($data['prodi']))->where('id', '<>', decrypt($id))->first();
             if ($slug)

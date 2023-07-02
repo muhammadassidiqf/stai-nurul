@@ -86,20 +86,24 @@ class ProdiService
 
     function update(array $data, $id)
     {
-        $file = $data['file_gambar'];
-        $file_name = $file->getClientOriginalName();
-        $file_name = preg_replace('!\s+!', ' ', $file_name);
-        $file_name = str_replace(' ', '_', $file_name);
-        $file_name = str_replace('%', '', $file_name);
-        $file_name = pathinfo($file_name, PATHINFO_FILENAME) . '-' . time() . '.' . pathinfo($file_name, PATHINFO_EXTENSION);
         $res = Prodi::where('id', decrypt($id));
         $prodi = $res->first();
-        $path = public_path("storage/img/prodi/" . $prodi->gambar);
-        if (file_exists($path)) {
-            unlink($path);
-            $file->move(public_path("storage/img/prodi/"), $file_name);
+        if (array_key_exists('file_gambar', $data)) {
+            $file = $data['file_gambar'];
+            $file_name = $file->getClientOriginalName();
+            $file_name = preg_replace('!\s+!', ' ', $file_name);
+            $file_name = str_replace(' ', '_', $file_name);
+            $file_name = str_replace('%', '', $file_name);
+            $file_name = pathinfo($file_name, PATHINFO_FILENAME) . '-' . time() . '.' . pathinfo($file_name, PATHINFO_EXTENSION);
+            $path = public_path("storage/img/prodi/" . $prodi->gambar);
+            if (file_exists($path)) {
+                unlink($path);
+                $file->move(public_path("storage/img/prodi/"), $file_name);
+            } else {
+                $file->move(public_path("storage/img/prodi/"), $file_name);
+            }
         } else {
-            $file->move(public_path("storage/img/prodi/"), $file_name);
+            $file_name = $prodi->gambar;
         }
         $res->update([
             'user_id' => $this->user->id,

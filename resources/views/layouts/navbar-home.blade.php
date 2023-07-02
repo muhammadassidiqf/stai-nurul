@@ -4,7 +4,7 @@
         <div class="col-lg-7 px-5 text-start">
             <div class="h-100 d-inline-flex align-items-center me-4">
                 <small class="fa fa-map-marker-alt text-white me-2"></small>
-                <small>Jl Raya Cibaduyut, Bandung</small>
+                <small>Jl Cibaduyut Raya Blok TVRI III, Bandung</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center">
                 <small class="far fa-clock text-white me-2"></small>

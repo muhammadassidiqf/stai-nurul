@@ -17,7 +17,7 @@
             <div class="col-lg-4 col-md-6">
                 <h4 class="text-light mb-4">Akademik</h4>
                 @foreach ($prodi as $item)
-                    <a class="btn btn-link" href=" href="{{ route('academic', $item->slug) }}">
+                    <a class="btn btn-link" href="{{ route('academic', $item->slug) }}">
                         {{ $item->prodi }}</a>
                 @endforeach
             </div>

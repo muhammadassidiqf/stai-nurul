@@ -109,8 +109,9 @@ class HomeController extends Controller
     {
         $data = Berita::where('slug', $slug);
         $news = $data->first();
+        $count = $news->count != null ? (int)$news->count : 0;
         $data->update([
-            'count' => (int)$news->count + 1
+            'count' =>  $count + 1
         ]);
         $popular = Berita::orderBy('created_at', 'desc')->orderBy('count', 'desc')->limit(4)->get();
         $prodi = Prodi::orderBy('created_at', 'desc')->get();

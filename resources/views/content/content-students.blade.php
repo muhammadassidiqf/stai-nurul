@@ -33,8 +33,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/courses-1.jpg"
-                                alt="">
+                            <img class="img-fluid team-img"
+                                src="{{ asset('') }}frontend/img/fahrul-azmi-5K549TS6F08-unsplash.jpg" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-outline-light border-2" href="">Read
                                     More</a>
@@ -49,8 +49,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/courses-2.jpg"
-                                alt="">
+                            <img class="img-fluid team-img"
+                                src="{{ asset('') }}frontend/img/hameed-ullah-eeI0al-Qx8k-unsplash.jpg" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-outline-light border-2" href="">Read
                                     More</a>
@@ -65,8 +65,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/courses-3.jpg"
-                                alt="">
+                            <img class="img-fluid team-img"
+                                src="{{ asset('') }}frontend/img/fahrul-azmi-gyKmF0vnfBs-unsplash.jpg" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-outline-light border-2" href="">Read
                                     More</a>
@@ -81,8 +81,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/courses-3.jpg"
-                                alt="">
+                            <img class="img-fluid team-img"
+                                src="{{ asset('') }}frontend/img/fahrul-azmi-r4qheYoY8Qg-unsplash.jpg" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-outline-light border-2" href="">Read
                                     More</a>
@@ -149,7 +149,7 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="col-lg-12 my-6 mb-0 wow fadeInUp mb-4" data-wow-delay="0.1s">
+                <div class="col-lg-12 my-6 wow fadeInUp mb-4" data-wow-delay="0.1s">
                     <div class="row g-4 text-center">
                         <div class="col-sm-12">
                             <a class="btn btn-primary py-3 px-5" href="">Selengkapnya</a>
@@ -165,8 +165,8 @@
     <div class="container-xxl py-6">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h6 class="text-primary text-uppercase mb-2">Alumni</h6>
-                <h1 class="display-6 mb-4">Get Involved</h1>
+                <h6 class="text-primary text-uppercase mb-2">Sambutan</h6>
+                <h1 class="display-6 mb-4">Pimpinan</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
@@ -174,50 +174,56 @@
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
                                 <img class="img-fluid rounded-circle mx-auto"
-                                    src="{{ asset('') }}frontend/img/testimonial-1.jpg" alt="">
+                                    src="{{ asset('') }}frontend/img/ketua-yayasan.png" alt="">
                                 <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
                                     style="width: 60px; height: 60px;">
                                     <i class="fa fa-quote-left fa-2x text-primary"></i>
                                 </div>
                             </div>
-                            <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                            <p class="fs-4">Selamat datang di STAI Nurul Iman Bandung! Kami berkomitmen untuk memberikan
+                                pendidikan bermutu dan inspiratif, dengan memadukan ilmu pengetahuan dan nilai-nilai
+                                keislaman. Bergabunglah dengan kami dan raih masa depan gemilang bersama STAI Nurul Iman
+                                Bandung! Terima kasih.
                             </p>
                             <hr class="w-25 mx-auto">
-                            <h5>Students Name</h5>
-                            <span>Profession</span>
+                            <h6>DRS. KH. KHOERUDIN ALY</h6>
+                            <span>KETUA YAYASAN</span>
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
                                 <img class="img-fluid rounded-circle mx-auto"
-                                    src="{{ asset('') }}frontend/img/testimonial-2.jpg" alt="">
+                                    src="{{ asset('') }}frontend/img/ketua.png" alt="">
                                 <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
                                     style="width: 60px; height: 60px;">
                                     <i class="fa fa-quote-left fa-2x text-primary"></i>
                                 </div>
                             </div>
-                            <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                            <p class="fs-4">Selamat datang di STAI Nurul Iman Bandung! Kami berkomitmen untuk memberikan
+                                pendidikan bermutu dan inspiratif, dengan memadukan ilmu pengetahuan dan nilai-nilai
+                                keislaman. Bergabunglah dengan kami dan raih masa depan gemilang bersama STAI Nurul Iman
+                                Bandung! Terima kasih.
                             </p>
                             <hr class="w-25 mx-auto">
-                            <h5>Students Name</h5>
-                            <span>Profession</span>
+                            <h5>HASAN BASRI, MM</h5>
+                            <span>KETUA</span>
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
                                 <img class="img-fluid rounded-circle mx-auto"
-                                    src="{{ asset('') }}frontend/img/testimonial-3.jpg" alt="">
+                                    src="{{ asset('') }}frontend/img/wk-1.png" alt="">
                                 <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
                                     style="width: 60px; height: 60px;">
                                     <i class="fa fa-quote-left fa-2x text-primary"></i>
                                 </div>
                             </div>
-                            <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                            <p class="fs-4">Selamat datang di STAI Nurul Iman Bandung! Kami berkomitmen untuk memberikan
+                                pendidikan bermutu dan inspiratif, dengan memadukan ilmu pengetahuan dan nilai-nilai
+                                keislaman. Bergabunglah dengan kami dan raih masa depan gemilang bersama STAI Nurul Iman
+                                Bandung! Terima kasih.
                             </p>
                             <hr class="w-25 mx-auto">
-                            <h5>Students Name</h5>
-                            <span>Profession</span>
+                            <h5>DR. PEPEN SUPENDI</h5>
+                            <span>WAKIL KETUA 1</span>
                         </div>
                     </div>
                 </div>

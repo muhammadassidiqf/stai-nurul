@@ -85,8 +85,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                                                    <i class="fa fa-car text-white"></i>
-                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                    <i class="fa fa-car text-white"></i>
+                                                                                                                                                                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Bahasa Arab</h5>
                                 <span>Program Studi Bahasa Arab di STAI Nurul Iman Bandung mengembangkan kemampuan berbahasa
@@ -99,8 +99,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                                                    <i class="fa fa-users text-white"></i>
-                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                    <i class="fa fa-users text-white"></i>
+                                                                                                                                                                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Ekonomi Islam</h5>
                                 <span>Program Studi Ekonomi Islam di STAI Nurul Iman Bandung menyediakan pemahaman tentang
@@ -113,8 +113,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                                                    <i class="fa fa-file-alt text-white"></i>
-                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                    <i class="fa fa-file-alt text-white"></i>
+                                                                                                                                                                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Pendidikan
                                     Agama
@@ -132,65 +132,23 @@
 
 
     <!-- About Start -->
-    <div class="container-xxl py-6">
+    <div class="container-xxl my-6">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6">
                     <div class="position-relative overflow-hidden ps-5 pt-5 h-100">
-                        <img class="position-absolute w-100 h-100" src="{{ asset('') }}frontend/img/about-campus.jpg"
-                            alt="" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100"
+                            src="{{ asset('') }}frontend/img/a363fe98-1b56-4fca-a543-e33c86dfa57e.jpg" alt=""
+                            style="object-fit: cover;">
                         <img class="position-absolute top-0 start-0 bg-white pe-3 pb-3"
-                            src="{{ asset('') }}frontend/img/about-campus2.jpg" alt=""
-                            style="width: 200px; height: 200px;">
+                            src="{{ asset('') }}frontend/img/about-1.jpg" alt=""
+                            style="width: 150px; height: 150px;">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="h-100">
                         <h6 class="text-primary text-uppercase mb-2">Tentang Kita</h6>
-                        <h1 class="display-6 mb-4">Inovasi Pendidikan, Memperkokoh Iman: Mewujudkan Masa Depan yang
-                            Gemilang</h1>
-                        <p align="justify">Komitmen STAI Nurul Iman Bandung dalam memberikan pendidikan yang inovatif dan
-                            berkualitas
-                            tinggi, sambil memperkuat nilai-nilai keimanan dalam setiap aspek pembelajaran. Melalui inovasi
-                            yang terus menerus, institusi ini berusaha untuk menghadirkan metode-metode pembelajaran yang
-                            efektif, teknologi yang canggih, dan kurikulum yang relevan untuk menghadapi tuntutan masa
-                            depan.
-                        </p>
-                        <p class="mb-4" align="justify">Dengan mengintegrasikan pendekatan inovatif dalam proses
-                            pembelajaran, STAI Nurul
-                            Iman Bandung berupaya untuk mempersiapkan mahasiswa agar siap menghadapi tantangan dunia yang
-                            terus berkembang. Sambil memperkuat keimanan dan nilai-nilai agama, institusi ini mendorong
-                            mahasiswa untuk mengembangkan pemikiran kreatif, kepemimpinan, serta keterampilan yang
-                            dibutuhkan untuk meraih masa depan yang gemilang.</p>
-
-                        <div class="row g-2 mb-4 pb-2">
-                            <div class="col-sm-6">
-                                <i class="fa fa-check text-primary me-2"></i>Economy
-                            </div>
-                            <div class="col-sm-6">
-                                <i class="fa fa-check text-primary me-2"></i>Language Arabic
-                            </div>
-                            <div class="col-sm-6">
-                                <i class="fa fa-check text-primary me-2"></i>Afordable Fee
-                            </div>
-                            <div class="col-sm-6">
-                                <i class="fa fa-check text-primary me-2"></i>Best Trainers
-                            </div>
-                        </div>
-                        <div class="row g-4">
-                            <div class="col-sm-6">
-                                <a class="btn btn-primary py-3 px-5" href="">Pendaftaran</a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a class="d-inline-flex align-items-center btn btn-outline-primary border-2 p-2"
-                                    href="tel:+0123456789">
-                                    <span class="flex-shrink-0 btn-square bg-primary">
-                                        <i class="fa fa-phone-alt text-white"></i>
-                                    </span>
-                                    <span class="px-3">+62 811132019</span>
-                                </a>
-                            </div>
-                        </div>
+                        {!! $tentang->isi !!}
                     </div>
                 </div>
             </div>
@@ -200,7 +158,7 @@
 
 
     <!-- Courses Start -->
-    <div class="container-xxl courses my-6 py-6 pb-0">
+    <div class="container-xxl courses my-5 py-4 ">
         <div class="container">
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
                 <h6 class="text-primary text-uppercase mb-2">Berita</h6>
@@ -248,7 +206,7 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="col-lg-12 my-6 mb-0 wow fadeInUp mb-4" data-wow-delay="0.1s">
+                <div class="col-lg-12 my-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row g-4 text-center">
                         <div class="col-sm-12">
                             <a class="btn btn-primary py-3 px-5" href="">Selengkapnya</a>
@@ -262,89 +220,86 @@
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-6">
+    <div class="container-xxl py-4">
         <div class="container">
-            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h1 class="display-6 mb-4">Boards</h1>
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6 mb-4">Pimpinan</h1>
             </div>
             <div class="row g-0 team-items">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-1.jpg"
+                            <img class="img-fluid team-img" src="{{ asset('frontend/img/ketua-yayasan.png') }}"
                                 alt="">
                             <div class="team-social text-center">
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="bg-light text-center p-4">
-                            <h5 class="mt-2">Full Name</h5>
-                            <span>Lecturer</span>
+                            <h6 class="mt-2">DRS. KH. KHOERUDIN ALY</h6>
+                            <span>KETUA YAYASAN</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-2.jpg"
-                                alt="">
+                            <img class="img-fluid team-img" src="{{ asset('frontend/img/ketua.png') }}" alt="">
                             <div class="team-social text-center">
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="bg-light text-center p-4">
-                            <h5 class="mt-2">Full Name</h5>
-                            <span>Lecturer</span>
+                            <h6 class="mt-2">HASAN BASRI, MM</h6>
+                            <span>KETUA</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-3.jpg"
-                                alt="">
+                            <img class="img-fluid team-img" src="{{ asset('frontend/img/wk-1.png') }}" alt="">
                             <div class="team-social text-center">
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="bg-light text-center p-4">
-                            <h5 class="mt-2">Full Name</h5>
-                            <span>Lecturer</span>
+                            <h6 class="mt-2">DR. PEPEN SUPENDI</h6>
+                            <span>WAKIL KETUA 1</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="{{ asset('') }}frontend/img/team-4.jpg"
-                                alt="">
+                            <img class="img-fluid team-img" src="{{ asset('frontend/img/wk-2.png') }}" alt="">
                             <div class="team-social text-center">
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="bg-light text-center p-4">
-                            <h5 class="mt-2">Full Name</h5>
-                            <span>Lecturer</span>
+                            <h6 class="mt-2">DR. PALAH, M.PD</h6>
+                            <span>WAKIL KETUA 2</span>
                         </div>
                     </div>
                 </div>

@@ -174,8 +174,8 @@ class BeritaController extends Controller
             $file_name = str_replace('%', '', $file_name);
             $file_name = pathinfo($file_name, PATHINFO_FILENAME) . '-' . time() . '.' . pathinfo($file_name, PATHINFO_EXTENSION);
             $path = public_path("storage/img/berita/" . $news->gambar);
-            if (File::exists($path)) {
-                File::delete($path);
+            if (file_exists($path)) {
+                unlink($path);
                 $file->move(public_path("storage/img/berita/"), $file_name);
             } else {
                 $file->move(public_path("storage/img/berita/"), $file_name);

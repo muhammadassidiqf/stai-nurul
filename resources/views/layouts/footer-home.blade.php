@@ -2,28 +2,26 @@
 <div class="container-fluid bg-primary text-light footer my-6 mb-0 py-6 wow fadeIn" data-wow-delay="0.1s">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl Raya Cibaduyut, Bandung</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 811132019</p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>stainuruliman@gmail.com</p>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-light mb-4">Tentang</h4>
+                <a class="btn btn-link" href="{{ route('about') }}">Tentang Stai Nurul Iman</a>
+                <a class="btn btn-link" href="{{ route('history') }}">Sejarah</a>
+                <a class="btn btn-link" href="{{ route('visi_misi') }}">Visi Misi</a>
+                <a class="btn btn-link" href="{{ route('struktur_organisasi') }}">Struktur Organisasi</a>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Popular Links</h4>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-light mb-4">Akademik</h4>
+                @foreach ($prodi as $item)
+                    <a class="btn btn-link" href=" href="{{ route('academic', $item->slug) }}">
+                        {{ $item->prodi }}</a>
+                @endforeach
             </div>
-            <div class="col-lg-3 col-md-6">
+            {{-- <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Newsletter</h4>
                 <form action="">
                     <div class="input-group">
@@ -40,7 +38,7 @@
                     <a class="btn btn-square btn-outline-light me-0" href=""><i
                             class="fab fa-linkedin-in"></i></a>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

@@ -35,9 +35,10 @@
 <nav class="navbar navbar-expand-xl bg-white navbar-light border-bottom border-black sticky-top p-0">
     <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"><img
             src="{{ asset('frontend/img/stai-logo.png') }}" class="img-logo" alt=""> <span
-            class="fw-bolder text-primary">STAI
+            class="fw-bolder text-primary ms-2">STAI
             NURUL
-            IMAN</span>
+            IMAN <br>
+            BANDUNG</span>
 
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -49,13 +50,13 @@
 
             {{-- <a href="{{ route('home') }}" class="nav-item nav-link  active">Home</a> --}}
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Tentang Stai
-                    Nurul Iman</a>
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Tentang </a>
                 <ul class="dropdown-menu m-0">
-                    <li><a class="dropdown-item" href="{{ route('about') }}">Tentang</a></li>
+                    <li><a class="dropdown-item" href="{{ route('about') }}">Tentang Stai
+                            Nurul Iman</a></li>
                     <li><a class="dropdown-item" href="{{ route('history') }}">Sejarah</a></li>
                     <li><a class="dropdown-item" href="{{ route('visi_misi') }}">Visi Misi</a></li>
-                    <li><a class="dropdown-item" href="">Struktur Organisasi</a></li>
+                    <li><a class="dropdown-item" href="{{ route('struktur_organisasi') }}">Struktur Organisasi</a></li>
                 </ul>
             </li>
             <a href="{{ route('students') }}" class="nav-item nav-link">Kemahasiswaan</a>
@@ -71,11 +72,11 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Media</a>
                 <ul class="dropdown-menu m-0">
-                    <li><a class="dropdown-item" href="">Features</a></li>
-                    <li><a class="dropdown-item" href="">Appointment</a></li>
+                    <li><a class="dropdown-item" href="">Berita</a></li>
+                    <li><a class="dropdown-item" href="">Gambar Kegiatan</a></li>
                 </ul>
             </li>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            {{-- <a href="contact.html" class="nav-item nav-link">Contact</a> --}}
             <a href="" class="btn btn-primary text-sm-start py-4 d-none d-md-none d-lg-block">Pendaftaran<i
                     class="fa fa-arrow-right ms-3"></i></a>
         </div>

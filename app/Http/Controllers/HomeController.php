@@ -20,7 +20,8 @@ class HomeController extends Controller
     {
         $news = Berita::orderBy('created_at', 'desc')->limit(3)->get();
         $prodi = Prodi::orderBy('created_at', 'desc')->get();
-        return view('content.content-home', compact('news', 'prodi'));
+        $tentang = Tentang::where('status', 1)->first();
+        return view('content.content-home', compact('news', 'prodi', 'tentang'));
     }
 
     public function news()
@@ -68,6 +69,12 @@ class HomeController extends Controller
         $prodi = Prodi::orderBy('created_at', 'desc')->get();
         $data = Prodi::where('slug', $id)->first();
         return view('content.content-academic', compact('prodi', 'data'));
+    }
+
+    public function struktur_organisasi()
+    {
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-so', compact('prodi'));
     }
 
     /**

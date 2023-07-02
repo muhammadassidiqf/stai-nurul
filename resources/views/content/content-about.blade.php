@@ -50,7 +50,8 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid team-img" src="{{ asset('frontend/img/ketua-yayasan.png') }}"
+                                alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
@@ -61,15 +62,15 @@
                             </div>
                         </div>
                         <div class="bg-light text-center p-4">
-                            <h5 class="mt-2">Full Name</h5>
-                            <span>Lecturer</span>
+                            <h6 class="mt-2">DRS. KH. KHOERUDIN ALY</h6>
+                            <span>KETUA YAYASAN</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid team-img" src="{{ asset('frontend/img/ketua.png') }}" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
@@ -80,15 +81,15 @@
                             </div>
                         </div>
                         <div class="bg-light text-center p-4">
-                            <h5 class="mt-2">Full Name</h5>
-                            <span>Lecturer</span>
+                            <h6 class="mt-2">HASAN BASRI, MM</h6>
+                            <span>KETUA</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="img/team-3.jpg" alt="">
+                            <img class="img-fluid team-img" src="{{ asset('frontend/img/wk-1.png') }}" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
@@ -99,15 +100,15 @@
                             </div>
                         </div>
                         <div class="bg-light text-center p-4">
-                            <h5 class="mt-2">Full Name</h5>
-                            <span>Lecturer</span>
+                            <h6 class="mt-2">DR. PEPEN SUPENDI</h6>
+                            <span>WAKIL KETUA 1</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid team-img" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid team-img" src="{{ asset('frontend/img/wk-2.png') }}" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
@@ -118,8 +119,8 @@
                             </div>
                         </div>
                         <div class="bg-light text-center p-4">
-                            <h5 class="mt-2">Full Name</h5>
-                            <span>Lecturer</span>
+                            <h6 class="mt-2">DR. PALAH, M.PD</h6>
+                            <span>WAKIL KETUA 2</span>
                         </div>
                     </div>
                 </div>

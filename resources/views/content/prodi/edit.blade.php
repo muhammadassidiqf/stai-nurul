@@ -1,25 +1,21 @@
-<form class="row g-3" action="{{ route('berita.update', encrypt($news->id)) }}" method="POST"
+<form class="row g-3" action="{{ route('prodi.update', encrypt($prodi->id)) }}" method="POST"
     enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="col-12">
-        <label class="form-label" for="collapsible-fullname">Judul</label>
-        <input type="text" name="judul" class="form-control" value="{{ $news->judul }}">
+        <label class="form-label" for="collapsible-fullname">Prodi</label>
+        <input type="text" name="prodi" class="form-control" value="{{ $prodi->prodi }}">
     </div>
     <div class="col-12">
-        <label class="form-label" for="collapsible-address">Isi Berita</label>
-        <textarea name="isi" id="editor1" rows="30">{{ $news->isi }}</textarea>
-    </div>
-    <div class="col-12">
-        <label class="form-label" for="collapsible-phone">Kategori</label>
-        <input type="text" name="kategori" class="form-control" value="{{ $news->kategori }}">
+        <label class="form-label" for="collapsible-address">Deskripsi Prodi</label>
+        <textarea name="isi" id="editor1" rows="30">{{ $prodi->isi }}</textarea>
     </div>
     <div class="col-12">
         <label class="form-label" for="collapsible-phone">File Gambar</label>
         <div class="row g-3">
             <div class="col-md-5">
-                <a class="btn btn-primary me-sm-3 me-1" href="{{ asset('storage/img/berita/' . $news->gambar) }}"
-                    target="_blank">{{ $news->gambar }}</a>
+                <a class="btn btn-primary me-sm-3 me-1" href="{{ asset('storage/img/prodi/' . $prodi->gambar) }}"
+                    target="_blank">{{ $prodi->gambar }}</a>
             </div>
             <div class="col-md-12">
                 <input type="file" name="file_gambar" class="form-control" id="inputGroupFile01">

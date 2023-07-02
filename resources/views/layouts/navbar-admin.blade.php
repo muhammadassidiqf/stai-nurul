@@ -29,76 +29,67 @@
                         <div class="dropdown-menu-header border-bottom">
                             <div class="dropdown-header d-flex align-items-center py-3">
                                 <h5 class="text-body mb-0 me-auto">Shortcuts</h5>
-                                <a href="javascript:void(0)" class="dropdown-shortcuts-add text-body"
+                                {{-- <a href="javascript:void(0)" class="dropdown-shortcuts-add text-body"
                                     data-bs-toggle="tooltip" data-bs-placement="top" title="Add shortcuts"><i
-                                        class="bx bx-sm bx-plus-circle"></i></a>
+                                        class="bx bx-sm bx-plus-circle"></i></a> --}}
                             </div>
                         </div>
                         <div class="dropdown-shortcuts-list scrollable-container">
                             <div class="row row-bordered overflow-visible g-0">
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                                        <i class="bx bx-calendar fs-4"></i>
+                                        <i class="bx bx-news fs-4"></i>
                                     </span>
-                                    <a href="" class="stretched-link">Calendar</a>
-                                    <small class="text-muted mb-0">Appointments</small>
+                                    <a href="{{ route('berita.index') }}" class="stretched-link">Berita</a>
+                                    <small class="text-muted mb-0">Kelola Data Berita</small>
                                 </div>
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                                        <i class="bx bx-food-menu fs-4"></i>
+                                        <i class="bx bx-user fs-4"></i>
                                     </span>
-                                    <a href="" class="stretched-link">Invoice
-                                        App</a>
-                                    <small class="text-muted mb-0">Manage Accounts</small>
+                                    <a href="{{ route('user.index') }}" class="stretched-link">Pengguna</a>
+                                    <small class="text-muted mb-0">Kelola Data Pengguna</small>
                                 </div>
                             </div>
                             <div class="row row-bordered overflow-visible g-0">
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                                        <i class="bx bx-user fs-4"></i>
+                                        <i class="bx bx-menu fs-4"></i>
                                     </span>
-                                    <a href="" class="stretched-link">User App</a>
-                                    <small class="text-muted mb-0">Manage Users</small>
+                                    <a href="{{ route('prodi.index') }}" class="stretched-link">Program Studi</a>
+                                    <small class="text-muted mb-0">Kelola Data Prodi</small>
                                 </div>
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                                         <i class="bx bx-check-shield fs-4"></i>
                                     </span>
-                                    <a href="" class="stretched-link">Role
-                                        Management</a>
-                                    <small class="text-muted mb-0">Permission</small>
+                                    <a href="{{ route('visi-misi.index') }}" class="stretched-link">Visi Misi</a>
+                                    <small class="text-muted mb-0">Kelola Data Visi Misi</small>
                                 </div>
                             </div>
                             <div class="row row-bordered overflow-visible g-0">
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                                        <i class="bx bx-pie-chart-alt-2 fs-4"></i>
+                                        <i class="bx bx-check-shield fs-4"></i>
                                     </span>
-                                    <a href="" class="stretched-link">Dashboard</a>
-                                    <small class="text-muted mb-0">User Profile</small>
+                                    <a href="{{ route('sejarah.index') }}" class="stretched-link">Sejarah</a>
+                                    <small class="text-muted mb-0">Kelola Data Sejarah</small>
                                 </div>
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                                        <i class="bx bx-cog fs-4"></i>
+                                        <i class="bx bx-check-shield fs-4"></i>
                                     </span>
-                                    <a href="" class="stretched-link">Setting</a>
-                                    <small class="text-muted mb-0">Account Settings</small>
+                                    <a href="{{ route('tentang.index') }}" class="stretched-link">Tentang Kampus</a>
+                                    <small class="text-muted mb-0">Kelola Data Tentang Kampus</small>
                                 </div>
                             </div>
                             <div class="row row-bordered overflow-visible g-0">
                                 <div class="dropdown-shortcuts-item col">
                                     <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                                        <i class="bx bx-help-circle fs-4"></i>
+                                        <i class="bx bx-menu fs-4"></i>
                                     </span>
-                                    <a href="" class="stretched-link">Help Center</a>
-                                    <small class="text-muted mb-0">FAQs & Articles</small>
-                                </div>
-                                <div class="dropdown-shortcuts-item col">
-                                    <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                                        <i class="bx bx-window-open fs-4"></i>
-                                    </span>
-                                    <a href=" class="stretched-link">Modals</a>
-                                    <small class="text-muted mb-0">Useful Popups</small>
+                                    <a href="" class="stretched-link">Struktur Organisasi</a>
+                                    <small class="text-muted mb-0">Kelola Data Struktur Organisasi</small>
                                 </div>
                             </div>
                         </div>

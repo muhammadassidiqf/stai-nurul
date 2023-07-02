@@ -27,15 +27,9 @@
             </a>
         </li>
         <li class="menu-item">
-            <a href="{{ route('user.index') }}" class="menu-link">
-                <i class='menu-icon tf-icons bx bx-user'></i>
-                <div data-i18n="Pengguna">Pengguna</div>
-            </a>
-        </li>
-        <li class="menu-item">
             <a href="{{ route('prodi.index') }}" class="menu-link">
-                <i class='menu-icon tf-icons bx bx-aperture'></i>
-                <div data-i18n="Pengguna">Prodi</div>
+                <i class='menu-icon tf-icons bx bx-menu'></i>
+                <div data-i18n="Prodi">Program Studi</div>
             </a>
         </li>
         <li class="menu-item">
@@ -65,6 +59,13 @@
                     </a>
                 </li>
             </ul>
+        </li>
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Data Master</span></li>
+        <li class="menu-item">
+            <a href="{{ route('user.index') }}" class="menu-link">
+                <i class='menu-icon tf-icons bx bx-user'></i>
+                <div data-i18n="Pengguna">Pengguna</div>
+            </a>
         </li>
     </ul>
 </aside>

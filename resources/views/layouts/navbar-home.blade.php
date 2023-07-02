@@ -59,7 +59,15 @@
                 </ul>
             </li>
             <a href="{{ route('students') }}" class="nav-item nav-link">Kemahasiswaan</a>
-            <a href="{{ route('academic') }}" class="nav-item nav-link">Akademik</a>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Akademik</a>
+                <ul class="dropdown-menu m-0">
+                    @foreach ($prodi as $item)
+                        <li><a class="dropdown-item" href="{{ route('academic', $item->slug) }}">Prodi
+                                {{ $item->prodi }}</a></li>
+                    @endforeach
+                </ul>
+            </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Media</a>
                 <ul class="dropdown-menu m-0">
@@ -68,8 +76,8 @@
                 </ul>
             </li>
             <a href="contact.html" class="nav-item nav-link">Contact</a>
-            <a href="" class="btn btn-primary text-sm-start py-4 px-lg-5 d-none d-md-none d-lg-block">Mahasiswa
-                Baru<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="" class="btn btn-primary text-sm-start py-4 d-none d-md-none d-lg-block">Pendaftaran<i
+                    class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </div>
 </nav>

@@ -28,7 +28,7 @@ Route::group(['prefix' => ''], function () {
     Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
     Route::get('/about', [HomeController::class, 'about'])->name('about');
     Route::get('/students', [HomeController::class, 'students'])->name('students');
-    Route::get('/academic', [HomeController::class, 'academic'])->name('academic');
+    Route::get('/academic/{slug}', [HomeController::class, 'academic'])->name('academic');
     Route::get('/history', [HomeController::class, 'history'])->name('history');
     Route::get('/visi_misi', [HomeController::class, 'visi_misi'])->name('visi_misi');
     Route::get('/news/{slug}', [HomeController::class, 'newsbySlug'])->name('newsbySlug');

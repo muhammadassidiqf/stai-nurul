@@ -1,38 +1,24 @@
 <form class="row g-3">
-    <style>
-        figure img {
-            object-fit: cover;
-            max-width: 100%;
-        }
-    </style>
     <div class="row mb-3">
-        <label class="col-sm-2" for="basic-default-title">Judul</label>
+        <label class="col-sm-2" for="basic-default-title">Prodi</label>
         <div class="col-sm-10">
             <label for="title">
-                {{ $news->judul }}
+                {{ $prodi->prodi }}
             </label>
         </div>
     </div>
     <div class="row mb-3">
-        <label class="col-sm-2" for="basic-default-title">Isi Berita</label>
+        <label class="col-sm-2" for="basic-default-title">Deskripsi Prodi</label>
         <div class="col-sm-10">
             <label for="Isi">
-                {!! $news->isi !!}
-            </label>
-        </div>
-    </div>
-    <div class="row mb-3">
-        <label class="col-sm-2" for="basic-default-title">Kategori</label>
-        <div class="col-sm-10">
-            <label for="category">
-                {{ $news->kategori }}
+                {!! $prodi->isi !!}
             </label>
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-2" for="basic-default-title">Gambar</label>
         <div class="col-sm-10">
-            <img src="{{ asset('storage/img/berita/' . $news->gambar) }}" width="140" height="150"
+            <img src="{{ asset('storage/img/prodi/' . $prodi->gambar) }}" width="140" height="150"
                 class="rounded-start" alt="View Sales">
         </div>
     </div>

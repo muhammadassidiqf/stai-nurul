@@ -1,4 +1,10 @@
 <form class="row g-3">
+    <style>
+        figure img {
+            object-fit: cover;
+            max-width: 100%;
+        }
+    </style>
     <div class="row mb-3">
         <label class="col-sm-2" for="basic-default-title">Isi Visi Misi</label>
         <div class="col-sm-10">

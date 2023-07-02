@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Prodi;
 use App\Models\Sejarah;
 use App\Models\Tentang;
 use App\Models\VisiMisi;
@@ -18,46 +19,55 @@ class HomeController extends Controller
     public function index()
     {
         $news = Berita::orderBy('created_at', 'desc')->limit(3)->get();
-        return view('content.content-home', compact('news'));
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-home', compact('news', 'prodi'));
     }
 
     public function news()
     {
-        return view('content.content-news');
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-news', compact('prodi'));
     }
 
     public function about()
     {
         $data = Tentang::where('status', '1')->first();
-        return view('content.content-about', compact('data'));
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-about', compact('data', 'prodi'));
     }
 
     public function profile()
     {
-        return view('content.content-profile');
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-profile', compact('prodi'));
     }
 
     public function students()
     {
         $news = Berita::orderBy('created_at', 'desc')->limit(3)->get();
-        return view('content.content-students', compact('news'));
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-students', compact('news', 'prodi'));
     }
 
     public function history()
     {
         $data = Sejarah::where('status', '1')->first();
-        return view('content.content-history', compact('data'));
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-history', compact('data', 'prodi'));
     }
 
     public function visi_misi()
     {
         $data = VisiMisi::where('status', '1')->first();
-        return view('content.content-visi', compact('data'));
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-visi', compact('data', 'prodi'));
     }
 
-    public function academic()
+    public function academic($id)
     {
-        return view('content.content-academic');
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        $data = Prodi::where('slug', $id)->first();
+        return view('content.content-academic', compact('prodi', 'data'));
     }
 
     /**
@@ -96,7 +106,8 @@ class HomeController extends Controller
             'count' => (int)$news->count + 1
         ]);
         $popular = Berita::orderBy('created_at', 'desc')->orderBy('count', 'desc')->limit(4)->get();
-        return view('content.content-news', compact('news', 'popular'));
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-news', compact('news', 'popular', 'prodi'));
     }
 
     /**

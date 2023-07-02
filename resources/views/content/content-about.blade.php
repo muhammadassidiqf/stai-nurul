@@ -29,15 +29,10 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
-                    {!! $data->isi !!}
+                    {!! !!$data ? $data->isi : '' !!}
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 p-lg-4">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action">Tentang</a>
-                        <a href="#" class="list-group-item list-group-item-action">Sejarah</a>
-                        <a href="#" class="list-group-item list-group-item-action">Visi Misi</a>
-                        <a href="#" class="list-group-item list-group-item-action">Struktur Organisasi</a>
-                    </div>
+                    <x-list-right-sidebar-about></x-list-right-sidebar-about>
                 </div>
             </div>
         </div>

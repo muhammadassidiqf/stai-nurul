@@ -1,5 +1,11 @@
 @extends('layouts.app-home')
 @section('content-home')
+    <style>
+        figure img {
+            object-fit: cover;
+            max-width: 100%;
+        }
+    </style>
     <!-- Carousel Start -->
     <div class="container-fluid d-flex align-items-center justify-content-center p-0 wow fadeInUp" data-wow-delay="0.1s"
         style="min-height: 80vh;background: linear-gradient(rgba(255, 255, 255, 0.561), rgba(255, 255, 255, 0.554)), url('{{ asset('storage/img/berita/' . $news->gambar) }}') center center no-repeat;background-attachment: fixed; background-size: cover;">

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\VisiMisiRequest;
 use App\Models\VisiMisi;
+use App\Services\VisiMisiService;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Carbon\Carbon;
@@ -23,56 +25,10 @@ class VisiMisiController extends Controller
         return view('content.visi-misi.index');
     }
 
-    public function list()
+    public function list(VisiMisiService $visimisi)
     {
-        $data = VisiMisi::with(['user'])->get();
-        if (request()->ajax()) {
-            return Datatables::of($data)
-                ->addIndexColumn()
-                ->editColumn('isi', function ($data) {
-                    $string = strip_tags($data->isi);
-                    if (strlen($string) > 100) {
-
-                        // truncate string
-                        $stringCut = substr($string, 0, 100);
-                        $endPoint = strrpos($stringCut, ' ');
-
-                        //if the string doesn't contain any space then it will cut without word basis.
-                        $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                        $string .= '...';
-                    }
-                    return $string;
-                })
-                ->editColumn('status', function ($data) {
-                    $status = '<div class="d-flex align-items-center lh-1 me-3 mb-3 mb-sm-0">
-                    <span class="badge badge-dot bg-danger me-1"></span> Not Active
-                  </div>';
-                    if ($data->status == '1') {
-                        $status = '<div class="d-flex align-items-center lh-1 me-3 mb-3 mb-sm-0">
-                        <span class="badge badge-dot bg-success me-1"></span> Active
-                      </div>';
-                    }
-                    return $status;
-                })
-                ->editColumn('user', function ($data) {
-                    return $data->user->name;
-                })
-                ->editColumn('waktu', function ($data) {
-                    return Carbon::parse($data->created_at)->translatedFormat('d F Y');
-                })
-                ->editColumn('aksi', function ($data) {
-                    $url = route('visi-misi.show', encrypt($data->id));
-                    $edit = route('visi-misi.edit', encrypt($data->id));
-                    return '<div class="text-center">
-                    <button class="btn btn-primary btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showdetail" data-remote="' . $url . '">
-                    <i class="bx bx-show"></i></button>
-                    <button class="btn btn-warning btn-sm detail" type="button" data-bs-toggle="modal" data-bs-target="#showedit" data-remote="' . $edit . '">
-                    <i class="bx bx-edit" ></i></button>
-                    </div>';
-                })
-                ->rawColumns(['aksi', 'status'])
-                ->make(true);
-        }
+        $visimisi->setUser(auth()->user());
+        return $visimisi->datatable();
     }
 
     /**
@@ -91,27 +47,19 @@ class VisiMisiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VisiMisiRequest $request, VisiMisiService $visiMisiService)
     {
-        $validator = Validator::make($request->all(), [
-            'isi' => 'required',
-            'status' => 'required'
-        ]);
-        if ($validator->fails()) {
-            return redirect()->route('visi-misi.create')->with('error', 'Data Visi Misi belum lengkap');
+        $data = $request->validated();
+
+        try {
+            $active = VisiMisi::where('status', '=', 1);
+            if ($data['status'] == "0" && $active->count() == 0)
+                return redirect()->route('visi-misi.create')->with('error', 'Data Visi Misi Tidak ada yang Aktif');
+            $visiMisiService->setUser(auth()->user())->store($data);
+            return redirect()->route('visi-misi.index')->with('success', 'Data Visi Misi Berhasil ditambahkan');
+        } catch (\Throwable $th) {
+            return redirect()->route('visi-misi.create')->with('error', 'Data Visi Misi Gagal ditambahkan');
         }
-        if ($request->status == "1") {
-            VisiMisi::where('status', '=', 1)->update(['status' => 0]);
-        }
-        $ins = VisiMisi::create([
-            'user_id' => auth()->user()->id,
-            'isi' => $request->isi,
-            'status' => $request->status
-        ]);
-        if ($ins) {
-            return redirect()->route('visi-misi.index')->with('success', 'Visi Misi Berhasil ditambahkan');
-        }
-        return redirect()->route('visi-misi.create')->with('error', 'Visi Misi Gagal ditambahkan');
     }
 
     /**
@@ -145,30 +93,19 @@ class VisiMisiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(VisiMisiRequest $request, VisiMisiService $visiMisiService, $id)
     {
-        $validator = Validator::make($request->all(), [
-            'isi' => 'required',
-            'status' => 'required'
-        ]);
-        if ($validator->fails()) {
-            return redirect()->route('visi-misi.index')->with('error', 'Data Visi Misi belum lengkap');
+        $data = $request->validated();
+
+        try {
+            $active = VisiMisi::where('status', '=', 1);
+            if ($data['status'] == "0" && !!$active->where('id', '=', decrypt($id))->get())
+                return redirect()->route('visi-misi.index')->with('error', 'Data Visi Misi Tidak ada yang Aktif!');
+            $upd =  $visiMisiService->setUser(auth()->user())->update($data, $id);
+            return redirect()->route('visi-misi.index')->with('success', 'Data Visi Misi Berhasil diubah');
+        } catch (\Throwable $e) {
+            return redirect()->route('visi-misi.index')->with('success', 'Data Visi Misi Gagal diubah');
         }
-        $active = VisiMisi::where('status', '=', 1);
-        if ($request->status == "1" && !!$active->get()) {
-            $active->update(['status' => 0]);
-        } else if ($request->status == "0" && !!$active->where('id', '=', decrypt($id))->get()) {
-            return redirect()->route('visi-misi.index')->with('error', 'Data Visi Misi Tidak ada yang active!');
-        }
-        $upd = VisiMisi::where('id', '=', decrypt($id))->update([
-            'user_id' => auth()->user()->id,
-            'isi' => $request->isi,
-            'status' => $request->status
-        ]);
-        if ($upd) {
-            return redirect()->route('visi-misi.index')->with('success', 'Visi Misi Berhasil diubah');
-        }
-        return redirect()->route('visi-misi.index')->with('error', 'Visi Misi Gagal diubah');
     }
 
     /**

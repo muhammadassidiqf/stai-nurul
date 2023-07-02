@@ -158,32 +158,31 @@ class BeritaController extends Controller
             'judul' => 'required',
             'isi' => 'required',
             'kategori' => 'required',
-            'file_gambar' => [
-                'required',
-                'image'
-            ]
         ]);
-        $user = Session::get('data');
         if ($validator->fails()) {
             return redirect()->back()->with('error', 'Berita Gagal diubah!');
         }
-        $file = $request->file('file_gambar');
-        $file_name = $file->getClientOriginalName();
-        $file_name = preg_replace('!\s+!', ' ', $file_name);
-        $file_name = str_replace(' ', '_', $file_name);
-        $file_name = str_replace('%', '', $file_name);
-        $file_name = pathinfo($file_name, PATHINFO_FILENAME) . '-' . time() . '.' . pathinfo($file_name, PATHINFO_EXTENSION);
         $data = Berita::where('id', decrypt($id));
         $news = $data->first();
-        $path = public_path("storage/img/berita/" . $news->gambar);
-        if (File::exists($path)) {
-            File::delete($path);
-            $file->move(public_path("storage/img/berita/"), $file_name);
+        if (!$request->file('file_gambar')) {
+            $file_name = $news->gambar;
         } else {
-            $file->move(public_path("storage/img/berita/"), $file_name);
+            $file = $request->file('file_gambar');
+            $file_name = $file->getClientOriginalName();
+            $file_name = preg_replace('!\s+!', ' ', $file_name);
+            $file_name = str_replace(' ', '_', $file_name);
+            $file_name = str_replace('%', '', $file_name);
+            $file_name = pathinfo($file_name, PATHINFO_FILENAME) . '-' . time() . '.' . pathinfo($file_name, PATHINFO_EXTENSION);
+            $path = public_path("storage/img/berita/" . $news->gambar);
+            if (File::exists($path)) {
+                File::delete($path);
+                $file->move(public_path("storage/img/berita/"), $file_name);
+            } else {
+                $file->move(public_path("storage/img/berita/"), $file_name);
+            }
         }
         $data->update([
-            'user_id' => $user->id,
+            'user_id' => auth()->user()->id,
             'judul' => $request->judul,
             'isi' => $request->isi,
             'kategori' => $request->kategori,

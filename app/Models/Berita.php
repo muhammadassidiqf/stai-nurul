@@ -11,4 +11,8 @@ class Berita extends Model
     protected $table = 'berita';
     protected $guarded = [];
     protected $primary_key = 'id';
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

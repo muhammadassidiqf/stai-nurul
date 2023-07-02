@@ -11,4 +11,8 @@ class Prodi extends Model
     protected $table = 'prodi';
     protected $guarded = [];
     protected $primary_key = 'id';
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

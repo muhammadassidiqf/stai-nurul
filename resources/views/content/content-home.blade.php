@@ -85,11 +85,12 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                        <i class="fa fa-car text-white"></i>
-                                                                                                                                                                                    </div> -->
+                                                                                                                                                                                                                    <i class="fa fa-car text-white"></i>
+                                                                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Bahasa Arab</h5>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
+                                <span>Program Studi Bahasa Arab di STAI Nurul Iman Bandung mengembangkan kemampuan berbahasa
+                                    Arab dan pemahaman budaya Arab</span>
                             </div>
                         </div>
                     </div>
@@ -98,11 +99,12 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                        <i class="fa fa-users text-white"></i>
-                                                                                                                                                                                    </div> -->
+                                                                                                                                                                                                                    <i class="fa fa-users text-white"></i>
+                                                                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Ekonomi Islam</h5>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
+                                <span>Program Studi Ekonomi Islam di STAI Nurul Iman Bandung menyediakan pemahaman tentang
+                                    prinsip-prinsip ekonomi dalam perspektif Islam.</span>
                             </div>
                         </div>
                     </div>
@@ -111,13 +113,14 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                        <i class="fa fa-file-alt text-white"></i>
-                                                                                                                                                                                    </div> -->
+                                                                                                                                                                                                                    <i class="fa fa-file-alt text-white"></i>
+                                                                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Pendidikan
                                     Agama
                                     Islam</h5>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo erat amet</span>
+                                <span>Program Studi Pendidikan Agama Islam di STAI Nurul Iman Bandung mempersiapkan calon
+                                    pendidik yang kompeten dalam mendidik siswa tentang agama Islam</span>
                             </div>
                         </div>
                     </div>
@@ -143,14 +146,23 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="h-100">
-                        <h6 class="text-primary text-uppercase mb-2">About Us</h6>
-                        <h1 class="display-6 mb-4">We Help Students To Learning about Muslim</h1>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
-                            Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                        <h6 class="text-primary text-uppercase mb-2">Tentang Kita</h6>
+                        <h1 class="display-6 mb-4">Inovasi Pendidikan, Memperkokoh Iman: Mewujudkan Masa Depan yang
+                            Gemilang</h1>
+                        <p align="justify">Komitmen STAI Nurul Iman Bandung dalam memberikan pendidikan yang inovatif dan
+                            berkualitas
+                            tinggi, sambil memperkuat nilai-nilai keimanan dalam setiap aspek pembelajaran. Melalui inovasi
+                            yang terus menerus, institusi ini berusaha untuk menghadirkan metode-metode pembelajaran yang
+                            efektif, teknologi yang canggih, dan kurikulum yang relevan untuk menghadapi tuntutan masa
+                            depan.
                         </p>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
-                            diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                            dolore erat amet</p>
+                        <p class="mb-4" align="justify">Dengan mengintegrasikan pendekatan inovatif dalam proses
+                            pembelajaran, STAI Nurul
+                            Iman Bandung berupaya untuk mempersiapkan mahasiswa agar siap menghadapi tantangan dunia yang
+                            terus berkembang. Sambil memperkuat keimanan dan nilai-nilai agama, institusi ini mendorong
+                            mahasiswa untuk mengembangkan pemikiran kreatif, kepemimpinan, serta keterampilan yang
+                            dibutuhkan untuk meraih masa depan yang gemilang.</p>
+
                         <div class="row g-2 mb-4 pb-2">
                             <div class="col-sm-6">
                                 <i class="fa fa-check text-primary me-2"></i>Economy

@@ -64,8 +64,20 @@
                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Akademik</a>
                 <ul class="dropdown-menu m-0">
                     @foreach ($prodi as $item)
-                        <li><a class="dropdown-item" href="{{ route('academic', $item->slug) }}">Prodi
-                                {{ $item->prodi }}</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">{{ $item->prodi }}</a>
+                            <ul class="dropdown-menu dropdown-submenu">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('academic', $item->slug) }}">Tentang
+                                        Prodi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="{{ route('staff_academic', 'staff' . '-' . $item->slug) }}">Staf
+                                        Pengajar</a>
+                                </li>
+                            </ul>
+                        </li>
                     @endforeach
                 </ul>
             </li>

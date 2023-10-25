@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\TentangController;
@@ -41,6 +42,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     Route::get('/berita/list', [BeritaController::class, 'list'])->name('berita.list');
     Route::resource('berita', BeritaController::class);
+
+    Route::get('/beasiswa/list', [BeasiswaController::class, 'list'])->name('beasiswa.list');
+    Route::resource('beasiswa', BeasiswaController::class);
 
     Route::get('/visi-misi/list', [VisiMisiController::class, 'list'])->name('visi-misi.list');
     Route::resource('visi-misi', VisiMisiController::class);

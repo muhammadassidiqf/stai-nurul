@@ -34,8 +34,26 @@
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-pin"></i>
+                <div data-i18n="Invoice">Kemahasiswaan</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('beasiswa.index') }}" class="menu-link">
+                        <div data-i18n="Beasiswa">Beasiswa</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="" class="menu-link">
+                        <div data-i18n="Alumni">Alumni</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-food-menu"></i>
-                <div data-i18n="Invoice">Modul Tentang</div>
+                <div data-i18n="Invoice">Tentang</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">

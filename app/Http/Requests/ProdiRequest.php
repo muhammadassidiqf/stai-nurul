@@ -23,14 +23,32 @@ class ProdiRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = [
-            'prodi' => 'required',
-            'isi' => 'required',
-            // 'file_gambar' => [
-            //     'required',
-            //     'image'
-            // ]
-        ];
+        if (!$this->request->get('file_gambar')) {
+            $rules = [
+                'prodi' => 'required',
+                'isi' => 'required',
+                'file_gambar' => [
+                    'required',
+                    'image'
+                ]
+            ];
+        } else {
+
+            $rules = [
+                'prodi' => 'required',
+                'isi' => 'required'
+            ];
+        }
         return $rules;
+    }
+
+    public function getCustomRules($type)
+    {
+        $rules = [];
+
+        switch ($type) {
+            case "create":
+            case "update":
+        }
     }
 }

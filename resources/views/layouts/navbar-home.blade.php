@@ -73,7 +73,7 @@
                                 </li>
                                 <li>
                                     <a class="dropdown-item"
-                                        href="{{ route('staff_academic', 'staff' . '-' . $item->slug) }}">Staf
+                                        href="{{ route('dosen', 'staff' . '-' . $item->slug) }}">Staf
                                         Pengajar</a>
                                 </li>
                             </ul>

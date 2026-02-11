@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('dosen', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('prodi_id')->constrained('prodi')->onDelete('cascade');
             $table->text('nama');
             $table->text('jabatan');
+            $table->text('keahlian');
             $table->longText('studi');
             $table->string('gambar');
             $table->timestamps();

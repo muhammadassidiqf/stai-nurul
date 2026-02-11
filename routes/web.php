@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BeasiswaController;
+use App\Http\Controllers\DosenController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\TentangController;
@@ -29,6 +30,7 @@ Route::group(['prefix' => ''], function () {
     Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
     Route::get('/about', [HomeController::class, 'about'])->name('about');
     Route::get('/students', [HomeController::class, 'students'])->name('students');
+    Route::get('/dosen', [HomeController::class, 'dosen'])->name('dosen');
     Route::get('/academic/{slug}', [HomeController::class, 'academic'])->name('academic');
     Route::get('/academic/{staf}', [HomeController::class, 'staff_academic'])->name('staff_academic');
     Route::get('/struktur_organisasi', [HomeController::class, 'struktur_organisasi'])->name('struktur_organisasi');
@@ -49,6 +51,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     Route::get('/visi-misi/list', [VisiMisiController::class, 'list'])->name('visi-misi.list');
     Route::resource('visi-misi', VisiMisiController::class);
+
+    Route::get('/dosen/list', [DosenController::class, 'list'])->name('dosen.list');
+    Route::resource('dosen', DosenController::class);
 
     Route::get('/prodi/list', [ProdiController::class, 'list'])->name('prodi.list');
     Route::resource('prodi', ProdiController::class);

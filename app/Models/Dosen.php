@@ -11,4 +11,14 @@ class Dosen extends Model
     protected $table = 'dosen';
     protected $guarded = [];
     protected $primary_key = 'id';
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function prodi()
+    {
+        return $this->belongsTo(Prodi::class);
+    }
 }

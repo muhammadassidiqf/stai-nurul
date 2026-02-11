@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Dosen;
 use App\Models\Prodi;
 use App\Models\Sejarah;
 use App\Models\Tentang;
@@ -48,6 +49,13 @@ class HomeController extends Controller
         $news = Berita::orderBy('created_at', 'desc')->limit(3)->get();
         $prodi = Prodi::orderBy('created_at', 'desc')->get();
         return view('content.content-students', compact('news', 'prodi'));
+    }
+
+    public function dosen()
+    {
+        $dosen = Dosen::with('prodi')->orderBy('created_at', 'desc')->get();
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-dosen', compact('dosen', 'prodi'));
     }
 
     public function history()

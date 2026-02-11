@@ -33,8 +33,14 @@
             </a>
         </li>
         <li class="menu-item">
+            <a href="{{ route('dosen.index') }}" class="menu-link">
+                <i class='menu-icon tf-icons bx bx-user-pin'></i>
+                <div data-i18n="Prodi">Dosen</div>
+            </a>
+        </li>
+        <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-user-pin"></i>
+                <i class="menu-icon tf-icons bx bx-user-circle"></i>
                 <div data-i18n="Invoice">Kemahasiswaan</div>
             </a>
             <ul class="menu-sub">

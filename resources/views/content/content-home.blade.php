@@ -148,7 +148,7 @@
                 <div class="col-lg-6">
                     <div class="h-100">
                         <h6 class="text-primary text-uppercase mb-2">Tentang Kita</h6>
-                        {!! $tentang->isi !!}
+                        {!! !empty($tentang->isi) ? $tentang->isi : 'Data tentang belum tersedia.' !!}
                     </div>
                 </div>
             </div>
@@ -173,11 +173,9 @@
                                 <?php
                                 $string = strip_tags($n->isi);
                                 if (strlen($string) > 100) {
-                                    // truncate string
                                     $stringCut = substr($string, 0, 100);
                                     $endPoint = strrpos($stringCut, ' ');
                                 
-                                    //if the string doesn't contain any space then it will cut without word basis.
                                     $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
                                     $string .= '...';
                                 }

@@ -136,7 +136,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6">
-                    <div class="position-relative overflow-hidden ps-5 pt-5 h-100">
+                    <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height:400px;">
                         <img class="position-absolute w-100 h-100"
                             src="{{ asset('') }}frontend/img/a363fe98-1b56-4fca-a543-e33c86dfa57e.jpg" alt=""
                             style="object-fit: cover;">
@@ -146,8 +146,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="h-100">
-                        <h6 class="text-primary text-uppercase mb-2">Tentang Kita</h6>
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+                        <h6 class="text-primary text-uppercase mb-2">Tentang STAI NURUL IMAN BANDUNG</h6>
                         {!! !empty($tentang->isi) ? $tentang->isi : 'Data tentang belum tersedia.' !!}
                     </div>
                 </div>

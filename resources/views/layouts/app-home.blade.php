@@ -5,11 +5,13 @@
     <meta charset="utf-8">
     <title>STAI NURUL IMAN - BANDUNG</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="description" content="STAI Nurul Iman Bandung - Sekolah Tinggi Agama Islam terbaik di Bandung. Informasi tentang STAI Nurul Iman, program studi, pendaftaran, dan berita terbaru." />
-    <meta name="keywords" content="stai nurul iman, stai nurul iman bandung, staini bandung, sekolah tinggi agama islam, kampus islam bandung, pendaftaran stai nurul iman" />
+    <meta name="description"
+        content="STAI Nurul Iman Bandung - Sekolah Tinggi Agama Islam terbaik di Bandung. Informasi tentang STAI Nurul Iman, program studi, pendaftaran, dan berita terbaru." />
+    <meta name="keywords"
+        content="stai nurul iman, stai nurul iman bandung, staini bandung, sekolah tinggi agama islam, kampus islam bandung, pendaftaran stai nurul iman" />
 
     <!-- Favicon -->
-    <link href="{{ asset('frontend/img/stai-logo.png') }}" rel="icon">
+    <link href="{{ asset('frontend/img/staini-logo.png') }}" rel="icon">
     @section('styles')
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">

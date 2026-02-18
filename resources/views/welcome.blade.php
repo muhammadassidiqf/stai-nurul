@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>STAI NURUL IMAN - BANDUNG</title>
+    <title>STAINI - BANDUNG</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -135,7 +135,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7">
-                                    <h1 class="display-2 text-light mb-5 animated slideInDown">STAI NURUL IMAN</h1>
+                                    <h1 class="display-2 text-light mb-5 animated slideInDown">STAINI</h1>
                                 </div>
                             </div>
                         </div>
@@ -631,7 +631,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">STAI NURUL IMANI</a>, All Right Reserved.
+                    &copy; <a href="#">STAINI</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     Designed By <a href="">Team</a>

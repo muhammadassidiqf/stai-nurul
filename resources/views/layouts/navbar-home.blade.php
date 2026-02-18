@@ -34,10 +34,8 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-xl bg-white navbar-light border-bottom border-black sticky-top p-0">
     <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"><img
-            src="{{ asset('frontend/img/stai-logo.png') }}" class="img-logo" alt=""> <span
-            class="fw-bolder text-primary ms-2">STAI
-            NURUL
-            IMAN <br>
+            src="{{ asset('frontend/img/staini-logo.png') }}" class="img-logo" alt=""> <span
+            class="fw-bolder text-primary">STAINI <br>
             BANDUNG</span>
 
     </a>

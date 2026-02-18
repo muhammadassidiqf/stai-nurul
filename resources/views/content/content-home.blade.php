@@ -10,7 +10,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7">
-                                    <h1 class="display-2 text-light mb-5 animated slideInDown">STAI NURUL IMAN</h1>
+                                    <h1 class="display-2 text-light mb-5 animated slideInDown">STAINI BANDUNG</h1>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +85,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                                                                                                                                                    <i class="fa fa-car text-white"></i>
-                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                    <i class="fa fa-car text-white"></i>
+                                                                                                                                                                                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Bahasa Arab</h5>
                                 <span>Program Studi Bahasa Arab di STAI Nurul Iman Bandung mengembangkan kemampuan berbahasa
@@ -99,8 +99,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                                                                                                                                                    <i class="fa fa-users text-white"></i>
-                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                    <i class="fa fa-users text-white"></i>
+                                                                                                                                                                                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Ekonomi Islam</h5>
                                 <span>Program Studi Ekonomi Islam di STAI Nurul Iman Bandung menyediakan pemahaman tentang
@@ -113,8 +113,8 @@
                     <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
                         <div class="d-flex">
                             <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                                                                                                                                                    <i class="fa fa-file-alt text-white"></i>
-                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                    <i class="fa fa-file-alt text-white"></i>
+                                                                                                                                                                                                                                                                                                                                </div> -->
                             <div class="ps-4">
                                 <h5>Program Studi Pendidikan
                                     Agama
@@ -147,7 +147,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="h-100 d-flex flex-column justify-content-center align-items-center">
-                        <h6 class="text-primary text-uppercase mb-2">Tentang STAI NURUL IMAN BANDUNG</h6>
+                        <h6 class="text-primary text-uppercase mb-2">Tentang STAINI BANDUNG</h6>
                         {!! !empty($tentang->isi) ? $tentang->isi : 'Data tentang belum tersedia.' !!}
                     </div>
                 </div>

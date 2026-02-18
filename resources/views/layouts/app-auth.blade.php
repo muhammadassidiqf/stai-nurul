@@ -10,7 +10,8 @@
 
     <title>Authentication Pages</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="STAI Nurul Iman Bandung - Sekolah Tinggi Agama Islam terbaik di Bandung. Informasi tentang STAI Nurul Iman, program studi, pendaftaran, dan berita terbaru." />
+    <meta name="keywords" content="stai nurul iman, stai nurul iman bandung, staini bandung, sekolah tinggi agama islam, kampus islam bandung, pendaftaran stai nurul iman" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('frontend/img/stai-logo.png') }}" />

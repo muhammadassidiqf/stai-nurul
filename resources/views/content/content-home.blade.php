@@ -226,7 +226,7 @@
             <div class="row g-0 team-items">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
-                        <div class="position-relative">
+                        <div class="position-relative d-flex justify-content-center">
                             <img class="img-fluid team-img" src="{{ asset('frontend/img/ketua-yayasan.png') }}"
                                 alt="">
                             <div class="team-social text-center">
@@ -246,7 +246,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item position-relative">
-                        <div class="position-relative">
+                        <div class="position-relative d-flex justify-content-center">
                             <img class="img-fluid team-img" src="{{ asset('frontend/img/ketua.png') }}" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
@@ -265,7 +265,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item position-relative">
-                        <div class="position-relative">
+                        <div class="position-relative d-flex justify-content-center">
                             <img class="img-fluid team-img" src="{{ asset('frontend/img/wk-1.png') }}" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i
@@ -284,7 +284,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item position-relative">
-                        <div class="position-relative">
+                        <div class="position-relative d-flex justify-content-center">
                             <img class="img-fluid team-img" src="{{ asset('frontend/img/wk-2.png') }}" alt="">
                             <div class="team-social text-center">
                                 <a class="btn btn-square btn-outline-light border-2 m-1" href=""><i

@@ -10,7 +10,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7">
-                                    <h1 class="display-4 text-light mb-5 animated slideInDown">Prodi <br>
+                                    <h1 class="display-4 text-light mb-5 animated slideInDown">
                                         {{ $data->prodi }}
                                     </h1>
                                 </div>

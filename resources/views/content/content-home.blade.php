@@ -16,53 +16,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="img-fluid img-header" src="{{ asset('frontend/img/campus2.jpg') }}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7">
-                                    <h1 class="display-2 text-light mb-5 animated slideInDown">Program Studi Bahasa
-                                        Arab
-                                    </h1>
-                                    <a href="" class="btn btn-primary py-sm-3 px-sm-5">Tentang</a>
-                                    <a href="" class="btn btn-light py-sm-3 px-sm-5 ms-3">Pendaftaran</a>
+                @foreach ($prodi as $item)
+                    <div class="carousel-item">
+                        <img class="img-fluid img-header" src="{{ asset('storage/img/prodi/' . $item->gambar) }}"
+                            alt="Image">
+                        <div class="carousel-caption">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-7">
+                                        <h1 class="display-2 text-light mb-5 animated slideInDown">{{ $item->prodi }}</h1>
+                                        <a href="{{ route('academic', $item->slug) }}"
+                                            class="btn btn-primary py-sm-3 px-sm-5">Tentang</a>
+                                        <a href="" class="btn btn-light py-sm-3 px-sm-5 ms-3">Pendaftaran</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="img-fluid img-header" src="{{ asset('frontend/img/campus3.jpg') }}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7">
-                                    <h1 class="display-2 text-light mb-5 animated slideInDown">Program Studi Ekonomi
-                                        Islam</h1>
-                                    <a href="" class="btn btn-primary py-sm-3 px-sm-5">Tentang</a>
-                                    <a href="" class="btn btn-light py-sm-3 px-sm-5 ms-3">Pendaftaran</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="img-fluid img-header" src="{{ asset('frontend/img/campus4.jpg') }}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7">
-                                    <h1 class="display-2 text-light mb-5 animated slideInDown">Program Studi Pendidikan
-                                        Agama
-                                        Islam</h1>
-                                    <a href="" class="btn btn-primary py-sm-3 px-sm-5">Tentang</a>
-                                    <a href="" class="btn btn-light py-sm-3 px-sm-5 ms-3">Pendaftaran</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -81,50 +52,29 @@
     <div class="container-fluid facts py-5 pt-lg-0">
         <div class="container py-5 pt-lg-0">
             <div class="row gx-0">
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
-                        <div class="d-flex">
-                            <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                                                                                                                                                                    <i class="fa fa-car text-white"></i>
-                                                                                                                                                                                                                                                                                                                                </div> -->
-                            <div class="ps-4">
-                                <h5>Program Studi Bahasa Arab</h5>
-                                <span>Program Studi Bahasa Arab di STAI Nurul Iman Bandung mengembangkan kemampuan berbahasa
-                                    Arab dan pemahaman budaya Arab</span>
+                @foreach ($prodi as $index => $item)
+                    <div class="col-lg-4 wow fadeIn" data-wow-delay="{{ 0.1 + $index * 0.2 }}s">
+                        <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
+                            <div class="d-flex">
+                                <div class="ps-4">
+                                    <h5>{{ $item->prodi }}</h5>
+                                    <span>
+                                        <?php
+                                        $string = strip_tags($item->isi);
+                                        if (strlen($string) > 150) {
+                                            $stringCut = substr($string, 0, 150);
+                                            $endPoint = strrpos($stringCut, ' ');
+                                            $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                                            $string .= '...';
+                                        }
+                                        echo $string;
+                                        ?>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
-                        <div class="d-flex">
-                            <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                                                                                                                                                                    <i class="fa fa-users text-white"></i>
-                                                                                                                                                                                                                                                                                                                                </div> -->
-                            <div class="ps-4">
-                                <h5>Program Studi Ekonomi Islam</h5>
-                                <span>Program Studi Ekonomi Islam di STAI Nurul Iman Bandung menyediakan pemahaman tentang
-                                    prinsip-prinsip ekonomi dalam perspektif Islam.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
-                        <div class="d-flex">
-                            <!-- <div class="flex-shrink-0 btn-lg-square bg-primary">
-                                                                                                                                                                                                                                                                                                                                    <i class="fa fa-file-alt text-white"></i>
-                                                                                                                                                                                                                                                                                                                                </div> -->
-                            <div class="ps-4">
-                                <h5>Program Studi Pendidikan
-                                    Agama
-                                    Islam</h5>
-                                <span>Program Studi Pendidikan Agama Islam di STAI Nurul Iman Bandung mempersiapkan calon
-                                    pendidik yang kompeten dalam mendidik siswa tentang agama Islam</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

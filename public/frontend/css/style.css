@@ -30,14 +30,18 @@
 }
 
 .img-logo{
-    width:100px;
+    width:220px;
 }
 
 .bg-gold {
     background-color:#aa895e;
 }
 
-
+@media (max-width: 991.98px) {
+    .img-logo{
+        width:160px;
+    }
+}
 
 /*** Spinner ***/
 #spinner {

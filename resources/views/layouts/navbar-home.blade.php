@@ -23,7 +23,9 @@
                         class="fab fa-twitter"></i></a>
                 <a class="btn btn-square rounded-0 border-0 border-end border-light text-white" href=""><i
                         class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-square rounded-0 text-white" href=""><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-square rounded-0 text-white"
+                    href="https://www.instagram.com/stainibandung?igsh=NTZtdGk0amNsOWpp"><i
+                        class="fab fa-instagram"></i></a>
             </div>
         </div>
     </div>
@@ -33,8 +35,9 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-xl bg-white navbar-light border-bottom border-black sticky-top p-0">
-    <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center border-end px-2 px-lg-3">
-        <img src="{{ asset('frontend/img/staini-navbar.png') }}" class="img-logo" alt="">
+    <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center border-end p-4 p-lg-2">
+        <img src="{{ asset('frontend/img/staini-navbar.png') }}" class="img-logo d-lg-block d-none" alt="">
+        <img src="{{ asset('frontend/img/staini-logo.png') }}" class="img-logo d-lg-none d-block" alt="">
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +87,8 @@
                 </ul>
             </li>
             {{-- <a href="contact.html" class="nav-item nav-link">Contact</a> --}}
-            <a href="" class="btn btn-primary text-sm-start py-4 d-none d-md-none d-lg-block">Pendaftaran<i
+            <a href="{{ route('admission') }}"
+                class="btn btn-primary text-sm-start py-4 d-none d-md-none d-lg-block">Pendaftaran<i
                     class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </div>

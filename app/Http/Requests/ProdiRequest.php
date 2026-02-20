@@ -23,7 +23,8 @@ class ProdiRequest extends FormRequest
      */
     public function rules()
     {
-        if (!$this->request->get('file_gambar')) {
+        if ($this->hasFile('file_gambar')) {
+            // Jika upload file baru, validasi sebagai image
             $rules = [
                 'prodi' => 'required',
                 'isi' => 'required',
@@ -33,7 +34,7 @@ class ProdiRequest extends FormRequest
                 ]
             ];
         } else {
-
+            // Jika tidak upload file (update tanpa ganti gambar), file_gambar tidak required
             $rules = [
                 'prodi' => 'required',
                 'isi' => 'required'

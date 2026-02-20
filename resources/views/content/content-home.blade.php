@@ -27,7 +27,8 @@
                                         <h1 class="display-2 text-light mb-5 animated slideInDown">{{ $item->prodi }}</h1>
                                         <a href="{{ route('academic', $item->slug) }}"
                                             class="btn btn-primary py-sm-3 px-sm-5">Tentang</a>
-                                        <a href="" class="btn btn-light py-sm-3 px-sm-5 ms-3">Pendaftaran</a>
+                                        <a href="{{ route('admission') }}"
+                                            class="btn btn-light py-sm-3 px-sm-5 ms-3">Pendaftaran</a>
                                     </div>
                                 </div>
                             </div>
@@ -52,29 +53,30 @@
     <div class="container-fluid facts py-5 pt-lg-0">
         <div class="container py-5 pt-lg-0">
             <div class="row gx-0">
-                @foreach ($prodi as $index => $item)
-                    <div class="col-lg-4 wow fadeIn" data-wow-delay="{{ 0.1 + $index * 0.2 }}s">
-                        <div class="bg-white shadow d-flex align-items-center h-100 p-4" style="min-height: 150px;">
-                            <div class="d-flex">
-                                <div class="ps-4">
-                                    <h5>{{ $item->prodi }}</h5>
-                                    <span>
-                                        <?php
-                                        $string = strip_tags($item->isi);
-                                        if (strlen($string) > 150) {
-                                            $stringCut = substr($string, 0, 150);
-                                            $endPoint = strrpos($stringCut, ' ');
-                                            $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                                            $string .= '...';
-                                        }
-                                        echo $string;
-                                        ?>
-                                    </span>
-                                </div>
-                            </div>
+                <div class="bg-primary shadow p-4 text-white wow fadeIn" data-wow-delay="0.4s">
+                    <div class="d-flex flex-column flex-lg-row gap-4 align-items-center text-white"
+                        style="text-align: justify !important;">
+                        <div class="px-4 text-center flex-shrink-0">
+                            <i class="fas fa-user-graduate" style="font-size: 6rem; color: #fff;"></i>
+                        </div>
+                        <div class="flex-grow-1 px-2">
+                            Masuki lingkungan akademik baru di STAINI Bandung, di mana penerimaan tahun 2026 kini resmi
+                            dibuka
+                            untuk
+                            calon Sarjana (S1) yang visioner. Ini adalah kesempatan Anda untuk bergabung dengan komunitas
+                            yang
+                            berorientasi global yang menjembatani nilai-nilai Islam dengan penelitian mutakhir. Dengan batas
+                            waktu
+                            Mei 2026, sekaranglah saatnya mengamankan masa depan Anda melalui program lintas disiplin yang
+                            beragam,
+                            dirancang untuk mencetak generasi emas 2045.
                         </div>
                     </div>
-                @endforeach
+                    <div class="text-center mt-4">
+                        <a href="{{ route('admission') }}" class="btn btn-gold py-2 px-3 wow fadeIn"
+                            data-wow-delay="0.6s">Daftar Sekarang</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -86,19 +88,28 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6">
-                    <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height:400px;">
-                        <img class="position-absolute w-100 h-100"
-                            src="{{ asset('') }}frontend/img/a363fe98-1b56-4fca-a543-e33c86dfa57e.jpg" alt=""
+                    <div class="position-relative overflow-hidden h-100" style="min-height:400px;">
+                        <img class="img-fluid position-absolute w-100 h-100"
+                            src="{{ asset('') }}frontend/img/image-pendirian.jpeg" alt=""
                             style="object-fit: cover;">
-                        <img class="position-absolute top-0 start-0 bg-white pe-3 pb-3"
-                            src="{{ asset('') }}frontend/img/about-1.jpg" alt=""
-                            style="width: 150px; height: 150px;">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="h-100 d-flex flex-column justify-content-center align-items-center">
                         <h6 class="text-primary text-uppercase mb-2">Tentang STAINI BANDUNG</h6>
-                        {!! !empty($tentang->isi) ? $tentang->isi : 'Data tentang belum tersedia.' !!}
+                        <?php
+                        $content = !empty($tentang->isi) ? strip_tags($tentang->isi) : 'Data tentang belum tersedia.';
+                        if (strlen($content) > 300) {
+                            $stringCut = substr($content, 0, 500);
+                            $endPoint = strrpos($stringCut, ' ');
+                            $content = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                            $content .= '...';
+                        }
+                        echo $content;
+                        ?>
+                        <div class="mt-4">
+                            <a href="{{ route('about') }}" class="btn btn-primary py-2 px-4">Selengkapnya</a>
+                        </div>
                     </div>
                 </div>
             </div>

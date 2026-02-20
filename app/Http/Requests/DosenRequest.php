@@ -23,7 +23,7 @@ class DosenRequest extends FormRequest
      */
     public function rules()
     {
-        if (!$this->request->get('file_gambar')) {
+        if ($this->hasFile('file_gambar')) {
             $rules = [
                 'nama' => 'required',
                 'jabatan' => 'required',

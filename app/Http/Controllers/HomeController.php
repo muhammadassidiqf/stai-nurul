@@ -72,6 +72,12 @@ class HomeController extends Controller
         return view('content.content-visi', compact('data', 'prodi'));
     }
 
+    public function admission()
+    {
+        $prodi = Prodi::orderBy('created_at', 'desc')->get();
+        return view('content.content-admission', compact('prodi'));
+    }
+
     public function academic($id)
     {
         $prodi = Prodi::orderBy('created_at', 'desc')->get();

@@ -6,6 +6,7 @@ use App\Http\Requests\ProdiRequest;
 use App\Models\Prodi;
 use App\Services\ProdiService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class ProdiController extends Controller
@@ -91,15 +92,31 @@ class ProdiController extends Controller
     {
         // $data['prodi'] = $request->prodi;
         // $data['isi'] = $request->isi;
+        Log::info("ProdiController::update() dipanggil dengan id terenkripsi: " . $id);
+
+        try {
+            $decryptedId = decrypt($id);
+            Log::info("ID berhasil didekripsi: " . $decryptedId);
+        } catch (\Throwable $e) {
+            Log::error("Gagal dekripsi ID: " . $e->getMessage());
+            return redirect()->route('prodi.index')->with('error', "ID tidak valid");
+        }
+
+        Log::info("Mengubah data Prodi dengan id " . $decryptedId);
         $data = $request->validated();
         try {
-            $slug = Prodi::where('slug', Str::slug($data['prodi']))->where('id', '<>', decrypt($id))->first();
-            if ($slug)
+            $slug = Prodi::where('slug', Str::slug($data['prodi']))->where('id', '<>', $decryptedId)->first();
+            if ($slug) {
+                Log::error("Prodi sudah ada dengan nama " . $data['prodi']);
                 return redirect()->route('prodi.index')->with('error', "Prodi sudah ada");
+            }
+            Log::info("Mengubah data Prodi dengan nama " . $data['prodi']);
             $prodiService->setUser(auth()->user())->update($data, $id);
+            Log::info("Data Prodi berhasil diubah dengan nama " . $data['prodi']);
             return redirect()->route('prodi.index')->with('success', 'Data Prodi Berhasil diubah');
         } catch (\Throwable $e) {
-            return $e;
+            Log::error("Error saat mengubah data Prodi: " . $e->getMessage());
+            return redirect()->route('prodi.index')->with('error', "Data Prodi gagal diubah!");
         }
     }
 

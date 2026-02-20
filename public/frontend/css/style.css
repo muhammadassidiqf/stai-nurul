@@ -37,9 +37,14 @@
     background-color:#aa895e;
 }
 
+.btn-gold{
+    background-color:#aa895e;
+    color: #fff;
+}
+
 @media (max-width: 991.98px) {
     .img-logo{
-        width:160px;
+        width:80px;
     }
 }
 

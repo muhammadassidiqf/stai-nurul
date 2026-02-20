@@ -10,7 +10,9 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7">
-                                    <h1 class="display-2 text-light mb-5 animated slideInDown">STAINI BANDUNG</h1>
+                                    <h1 class="display-4 fw-bold mb-4 wow fadeInUp text-white" data-wow-delay="0.1s">
+                                        STAINI Bandung <br /> (Sekolah Tinggi Agama Islam Nurul Iman)
+                                    </h1>
                                 </div>
                             </div>
                         </div>
